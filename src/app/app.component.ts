@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Liquefaction';
-  X=[0,
+  x=[0,
     0.01,
     0.02,
     0.03,
@@ -16392,7 +16392,7 @@ export class AppComponent {
     163.82,
     163.83,
   ];
-  Y = [4.8344688E-12,
+  y = [4.8344688E-12,
     4.8361349E-12,
     4.8420142E-12,
     4.8651697E-12,
