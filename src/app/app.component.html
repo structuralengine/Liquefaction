@@ -1,6 +1,10 @@
 <div>
     <canvas baseChart
-      [datasets]='y'>
+    [datasets]="lineChartData"
+    [labels]="lineChartLabels"
+    [colors]="lineChartColors"
+    [chartType]="lineChartType"
+    [options]="lineChartOptions">
+
     </canvas>
-    <p>aaaaaaaaa</p>
 </div>
