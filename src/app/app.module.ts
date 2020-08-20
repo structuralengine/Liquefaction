@@ -9,9 +9,12 @@ import { environment } from '../environments/environment';
 import { RouterModule } from '@angular/router';
 import { ChartsModule } from 'ng2-charts'; 
 
+import { AppResultComponent } from './appresult.component'
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppResultComponent
   ],
   imports: [
     HttpClientModule,

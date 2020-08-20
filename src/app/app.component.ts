@@ -3,6 +3,8 @@ import { ChartDataSets, ChartOptions } from 'chart.js'; // データ型をimport
 import { Color, Label, BaseChartDirective } from 'ng2-charts'; // ng2-chartsのプロパティのデータ型をimport
 import { HttpClient } from '@angular/common/http';
 
+import * as FileSaver from 'file-saver';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -121,4 +123,13 @@ export class AppComponent {
     );
   }  
 
+
+
+
+  save(): void {
+    const data: string = "aaa";
+
+    const blob = new window.Blob([data], { type: 'text/plain' });
+    FileSaver.saveAs(blob, 'liquef.liq');
+  }
 }
