@@ -1,4 +1,3 @@
-<router-outlet></router-outlet>
 <div class="selectSpectra">
     <select (change)='onSelectChange($event.target.value)'>
         <option value="g0_1">L2スペクトルⅠ(G0地盤)</option>
@@ -24,8 +23,3 @@
     [options]="lineChartOptions">
     </canvas>
 </div>
-<div class="button-area">
-    <button class="button button-md button-white" ><a href="/result">解析開始</a></button>
-    <button class="button button-md color-y-bg" id="spectra_file"><a #downloadLink[href]="" [download]="">ファイル保存</a></button>
-</div>
-
