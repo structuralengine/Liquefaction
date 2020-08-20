@@ -34,8 +34,8 @@ export class AppComponent {
       yAxes: [
         {
           ticks: {
-            min: -500,
-            max: 500,
+            min: -1200,
+            max: 1200,
           }
         }
       ]
@@ -119,6 +119,6 @@ export class AppComponent {
         console.log(error);
       }
     );
-  }
+  }  
 
 }
