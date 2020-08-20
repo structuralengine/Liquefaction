@@ -16,19 +16,20 @@
         <option value="g3_2">L2スペクトルⅡ(G3地盤)</option>
         <option value="g4_2">L2スペクトルⅡ(G4地盤)</option>
         <option value="g5_2" selected>L2スペクトルⅡ(G5地盤)</option>
- </select>
+    </select>
 </div>
 <div class="chart">
-    <canvas baseChart
-    [datasets]="lineChartData"
-    [labels]="lineChartLabels"
-    [colors]="lineChartColors"
-    [chartType]="lineChartType"
-    [options]="lineChartOptions">
+    <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [colors]="lineChartColors"
+        [chartType]="lineChartType" [options]="lineChartOptions">
     </canvas>
 </div>
-<div class="button-area">   
-    <button class="button button-md button-white" ><a routerLink="/result">解析開始</a></button>
+<div class="button-area">
+    <button class="button button-md button-white"><a routerLink="/result">解析開始</a></button>
+    <label>
+        <span>
+            ファイルを開く
+            <input type="file" accept="application/json" (change)="open($event)" style="display:none" />
+        </span>
+    </label>
     <button class="button button-md color-y-bg" id="spectra_file" (click)="save()">ファイル保存</button>
 </div>
-

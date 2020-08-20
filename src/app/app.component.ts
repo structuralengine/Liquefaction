@@ -114,14 +114,14 @@ export class AppComponent {
           this.chart.chart.data.datasets[0].data = yy;
           this.chart.chart.data.labels = xx;
           this.chart.chart.update()
-      }, 2000);
+        }, 2000);
 
       },
       error => {
         console.log(error);
       }
     );
-  }  
+  }
 
 
 
@@ -131,5 +131,33 @@ export class AppComponent {
 
     const blob = new window.Blob([data], { type: 'text/plain' });
     FileSaver.saveAs(blob, 'liquef.liq');
+  }
+
+  // ファイルを開く
+  open(evt) {
+    const file = evt.target.files[0];
+    const fileName = file.name;
+    evt.target.value = '';
+    let data: any
+    this.fileToText(file)
+      .then(text => {
+        data = false;
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
+  private fileToText(file): any {
+    const reader = new FileReader();
+    reader.readAsText(file);
+    return new Promise((resolve, reject) => {
+      reader.onload = () => {
+        resolve(reader.result);
+      };
+      reader.onerror = () => {
+        reject(reader.error);
+      };
+    });
   }
 }
