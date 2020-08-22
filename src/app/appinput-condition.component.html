@@ -1,0 +1,10 @@
+<div class="button-area">
+    <button class="button button-md button-white"><a routerLink="/result">解析開始</a></button>
+    <label>
+        <span>
+            ファイルを開く
+            <input type="file" accept="application/json" (change)="open($event)" style="display:none" />
+        </span>
+    </label>
+    <button class="button button-md color-y-bg" id="spectra_file" (click)="save()">ファイル保存</button>
+ </div>

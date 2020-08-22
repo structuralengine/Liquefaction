@@ -1,35 +1,12 @@
-<router-outlet></router-outlet>
-
-
-
-<div class="selectSpectra">
-    <select (change)='onSelectChange($event.target.value)'>
-        <option value="g0_1">L2スペクトルⅠ(G0地盤)</option>
-        <option value="g1_1">L2スペクトルⅠ(G1地盤)</option>
-        <option value="g2_1">L2スペクトルⅠ(G2地盤)</option>
-        <option value="g3_1">L2スペクトルⅠ(G3地盤)</option>
-        <option value="g4_1">L2スペクトルⅠ(G4地盤)</option>
-        <option value="g5_1">L2スペクトルⅠ(G5地盤)</option>
-        <option value="g0_2">L2スペクトルⅡ(G0地盤)</option>
-        <option value="g1_2">L2スペクトルⅡ(G1地盤)</option>
-        <option value="g2_2">L2スペクトルⅡ(G2地盤)</option>
-        <option value="g3_2">L2スペクトルⅡ(G3地盤)</option>
-        <option value="g4_2">L2スペクトルⅡ(G4地盤)</option>
-        <option value="g5_2" selected>L2スペクトルⅡ(G5地盤)</option>
-    </select>
-</div>
-<div class="chart">
-    <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [colors]="lineChartColors"
-        [chartType]="lineChartType" [options]="lineChartOptions">
-    </canvas>
-</div>
-<div class="button-area">
-    <button class="button button-md button-white"><a routerLink="/result">解析開始</a></button>
-    <label>
-        <span>
-            ファイルを開く
-            <input type="file" accept="application/json" (change)="open($event)" style="display:none" />
-        </span>
-    </label>
-    <button class="button button-md color-y-bg" id="spectra_file" (click)="save()">ファイル保存</button>
-</div>
+<header>
+    <div class="container">
+    <div class="logo">
+        <img src="./assets/icons/note.png" with="20" height="20" alt="note">
+    </div>
+    <div class="title">
+        <h1>液状化アプリ</h1>
+    </div>
+    </div>
+  </header>
+<body><div class="container"><router-outlet></router-outlet></div></body>
+<footer></footer>

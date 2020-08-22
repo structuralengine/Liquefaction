@@ -10,11 +10,17 @@ import { RouterModule } from '@angular/router';
 import { ChartsModule } from 'ng2-charts'; 
 
 import { AppResultComponent } from './appresult.component'
+import { appChart } from './appinput-chart.component';
+import { appinputCondition } from './appinput-condition.component';
+import { appExplain } from './appexplain.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppResultComponent
+    AppResultComponent,
+    appChart,
+    appinputCondition,
+    appExplain
   ],
   imports: [
     HttpClientModule,
