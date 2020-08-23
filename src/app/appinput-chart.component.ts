@@ -21,6 +21,7 @@ import * as FileSaver from 'file-saver';
         label: '加速度'
       },
     ];
+    
     lineChartColors: Color[] = [
       {
         borderColor: 'black',
@@ -28,7 +29,7 @@ import * as FileSaver from 'file-saver';
       },
     ];
     lineChartType = 'line'; // グラフの種類
-  
+   
     lineChartOptions = {
       responsive: true,
       scales: {

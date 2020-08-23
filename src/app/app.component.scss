@@ -127,5 +127,61 @@ header .container .title{
     color:#333333;
 
 }
+
+
+/*tabのスタイル*/
+.tabs {
+    width: 100%;
+    padding-bottom: 40px;
+    background-color: #fff;
+}
+
+.tab_item {
+    display: block;
+    width: calc(100% / 3);
+    background-color: #fff;
+    padding:8px 12px;
+    font-size: 12px;
+    text-align: center;
+    color: #565656;
+    border: 1px solid #DDDDDD;
+    float: left;
+    text-align: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+// @media screen and (max-width: 767px) {
+//     .tab_item {
+//         padding: 12px 8px;
+//         font-size: 10px;
+//     }
+// }
+
+.tab_item:hover {
+    opacity: 0.8;
+}
+
+input[name="tab_item"] {
+    display: none;
+}
+
+.tab_content {
+    display: none;
+    clear: both;
+    overflow: hidden;
+    padding-top: 8px;
+}
+
+#chart:checked ~ #chart_content,
+#condition:checked ~ #condition_content{
+    display: block;
+}
+
+.tabs input:checked + .tab_item {
+    background-color: #F4D44E;
+    border: 1px solid #F4D44E;
+    color: #1B0D08;
+}
     
    

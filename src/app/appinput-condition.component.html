@@ -1,10 +1,55 @@
-<div class="button-area">
-    <button class="button button-md button-white"><a routerLink="/result">解析開始</a></button>
-    <label>
+ <div class="button-area">
+    <a routerLink="/result"><button class="button button-md button-white">解析開始</button></a>
+   <button class="button button-md color-y-bg">
+    <label>    
+        <span>
+    ファイルを開く
+    <input type="file" accept="application/json" (change)="open($event)" style="display:none" />
+         </span>
+    </label>
+</button>
+    <!-- <label>
         <span>
             ファイルを開く
             <input type="file" accept="application/json" (change)="open($event)" style="display:none" />
         </span>
-    </label>
+    </label> -->
     <button class="button button-md color-y-bg" id="spectra_file" (click)="save()">ファイル保存</button>
  </div>
+
+
+<div class="tabs content-detail">
+    <input id="chart" type="radio" name="tab_item" checked>
+    <label class="tab_item" for="chart">chart選択</label>
+    <input id="condition" type="radio" name="tab_item">
+    <label class="tab_item" for="condition">地盤データ情報</label>
+    <div class="tab_content" id="chart_content">
+        <div class="tab_content_description">
+            <p class="c-txtsp">地盤データ</p>
+        </div>
+    </div>
+    <div class="tab_content" id="condition_content">
+        <div class="tab_content_description">
+        
+  <form>
+    <div>
+      <label>地下水面</label>
+      <div>
+        <input type="number" id="number" required>m
+      </div>
+    </div>
+    <div>
+        <label>上載荷重</label>
+        <div>
+          <input type="number" id="force" required>m
+        </div>
+      </div>
+  </form>
+            <div #spreadsheet></div>
+        </div>
+    </div>
+</div>
+
+
+
+    

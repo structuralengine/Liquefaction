@@ -1,5 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild,ElementRef } from '@angular/core';
 import * as FileSaver from 'file-saver';
+
+import * as jexcel from 'jexcel';
+
 
 
 @Component({
@@ -14,6 +17,19 @@ import * as FileSaver from 'file-saver';
       const blob = new window.Blob([data], { type: 'text/plain' });
       FileSaver.saveAs(blob, 'liquef.liq');
     }
+
+    @ViewChild("spreadsheet") spreadsheet: ElementRef;
+
+  ngAfterViewInit() {
+    jexcel(this.spreadsheet.nativeElement, {
+      data: [[]],
+      columns: [
+        { type: "dropdown", width: "100px", source: ["Y", "N"] },
+        { type: "color", width: "100px", render: "square" }
+      ],
+      minDimensions: [10, 10]
+    });
+  }
   
     // ファイルを開く
     open(evt) {
