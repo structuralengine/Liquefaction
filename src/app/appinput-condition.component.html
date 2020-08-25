@@ -1,5 +1,4 @@
 <div class="button-area">
-  <a routerLink="/result"><button class="button button-md button-white">解析開始</button></a>
  <button class="button button-md color-y-bg">
   <label>    
       <span>
@@ -17,10 +16,10 @@
   <button class="button button-md color-y-bg" id="spectra_file" (click)="save()">ファイル保存</button>
 </div>
 <ol class="stepBar">
-  <li><span>1</span><br>グラフ</li>
-  <li><span>2</span><br>地下水位</li>
-  <li class="visited"><span>3</span><br>地盤状態</li>
-  <li><span>4</span><br>結果</li>
+  <li><a routerLink="/chart"><span>1</span><br>グラフ</a></li>
+  <li><a routerLink="/underground"><span>2</span><br>地下水位</a></li>
+  <li class="visited"><a routerLink="/condition"> <span>3</span><br>地盤状態</a></li>
+  <li><a routerLink="/result"><span>4</span><br>結果</a></li>
 </ol>
 
  <div class="input-condition">
