@@ -18,18 +18,31 @@ import * as jexcel from 'jexcel';
       FileSaver.saveAs(blob, 'liquef.liq');
     }
 
-    @ViewChild("spreadsheet") spreadsheet: ElementRef;
+    @ViewChild("spreadsheet_1") spreadsheet_1: ElementRef;
+    @ViewChild("spreadsheet_2") spreadsheet_2: ElementRef;
+
 
   ngAfterViewInit() {
-    jexcel(this.spreadsheet.nativeElement, {
+    jexcel(this.spreadsheet_1.nativeElement, {
       data: [[]],
       columns: [
-        { type: "dropdown", width: "100px", source: ["Y", "N"] },
-        { type: "color", width: "100px", render: "square" }
+        { type: "text", width: "150px" ,title:"地層底面深度\n(m)"},
+        
+       
       ],
-      minDimensions: [10, 10]
+      minDimensions: [1, 20]
     });
-  }
+
+    jexcel(this.spreadsheet_2.nativeElement, {
+        data: [[]],
+        columns: [
+          { type: "text", width: "150px" ,title:"R"},
+          { type: "text", width: "150px" ,title:"N"}
+         
+        ],
+        minDimensions: [2, 20]
+      });
+    }
   
     // ファイルを開く
     open(evt) {

@@ -1,0 +1,47 @@
+<div class="button-area">
+    <a routerLink="/result"><button class="button button-md button-white">解析開始</button></a>
+   <button class="button button-md color-y-bg">
+    <label>    
+        <span>
+    ファイルを開く
+    <input type="file" accept="application/json" (change)="open($event)" style="display:none" />
+         </span>
+    </label>
+    </button>
+    <!-- <label>
+        <span>
+            ファイルを開く
+            <input type="file" accept="application/json" (change)="open($event)" style="display:none" />
+        </span>
+    </label> -->
+    <button class="button button-md color-y-bg" id="spectra_file" (click)="save()">ファイル保存</button>
+ </div>
+ <ol class="stepBar">
+  <li><span>1</span><br>グラフ</li>
+  <li  class="visited"><span>2</span><br>地下水位</li>
+  <li><span>3</span><br>地盤状態</li>
+  <li><span>4</span><br>結果</li>
+</ol>
+
+<div class="input-underground">
+  <div class="underground-image">
+    <img src="./assets/icons/underground.jpg" with="500" height="500" alt="underground"> 
+  </div>
+       
+  <form>
+    <div>
+      <label>地下水面</label>
+      <div>
+        <input type="number" id="number" required>m
+      </div>
+    </div>
+    <div #spreadsheet></div>
+    
+  </form>
+</div>
+            <!-- <div> #spreadsheet</div> -->
+    
+ 
+
+
+    

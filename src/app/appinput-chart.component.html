@@ -17,14 +17,13 @@
     <button class="button button-md color-y-bg" id="spectra_file" (click)="save()">ファイル保存</button>
  </div>
 
+ <ol class="stepBar">
+    <li class="visited"><span>1</span><br>グラフ</li>
+    <li><span>2</span><br>地下水位</li>
+    <li><span>3</span><br>地盤状態</li>
+    <li><span>4</span><br>結果</li>
+</ol>
 
-<div class="tabs content-detail">
-    <input id="chart" type="radio" name="tab_item" checked>
-    <label class="tab_item" for="chart">chart選択</label>
-    <input id="condition" type="radio" name="tab_item">
-    <label class="tab_item" for="condition">地盤データ情報</label>
-    <div class="tab_content" id="chart_content">
-        <div class="tab_content_description">
             <div class="selectSpectra">
                 <select (change)='onSelectChange($event.target.value)'>
                     <option value="g0_1">L2スペクトルⅠ(G0地盤)</option>
@@ -46,15 +45,6 @@
                             [chartType]="lineChartType" [options]="lineChartOptions">
                         </canvas>
                     </div>
-                
-        </div>
-    </div>
-    <div class="tab_content" id="condition_content">
-        <div class="tab_content_description">
-            <p class="c-txtsp">地盤データ</p>
-        </div>
-    </div>
-</div>
 
 
 

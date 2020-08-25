@@ -1,15 +1,14 @@
 import { Component, ViewChild, ElementRef  } from '@angular/core';
 import * as FileSaver from 'file-saver';
-
 import * as jexcel from 'jexcel';
 
 @Component({
-  selector: 'appresult-root',
-  templateUrl: './appresult.component.html',
+  selector: 'appunderground-root',
+  templateUrl: './appinput-underground.component.html',
   styleUrls: ['./app.component.scss']
 })
 
-export class AppResultComponent {
+export class appunderground {
 
   constructor() {
 
@@ -21,19 +20,13 @@ export class AppResultComponent {
     jexcel(this.spreadsheet.nativeElement, {
       data: [[]],
       columns: [
-        { type: "text", width: "150px" ,title:"液状化を検\n討する深度\n(m)"},
-        { type: "text", width: "150px" ,title:"全上載圧σv\n(kN/m2)"},
-        { type: "text", width: "150px" ,title:"有効上載圧σv'\n(kN/m2)"},
-        { type: "text", width: "150px" ,title:"液状化強度比\n R"},
-        { type: "text", width: "150px" ,title:"せん断応力比'\n L"},
-        { type: "text", width: "150px" ,title:"液状化抵抗率\n FL"},
-        { type: "text", width: "150px" ,title:"判定"},
-      
+        { type: "text", width: "150px" ,title:"地層底面深度\n(m)"},
+        { type: "text", width: "150px" ,title:"湿潤単位\n体積重量γt\n(kN/m3)"},
+       
       ],
-      minDimensions: [7, 20]
+      minDimensions: [2, 20]
     });
   }
-
 
   save(): void {
     const data: string = "aaa";

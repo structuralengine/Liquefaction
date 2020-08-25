@@ -128,60 +128,59 @@ header .container .title{
 
 }
 
-
-/*tabのスタイル*/
-.tabs {
-    width: 100%;
-    padding-bottom: 40px;
-    background-color: #fff;
+.input-underground,.input-condition{
+    display: flex;
+    justify-content: space-around;
 }
 
-.tab_item {
-    display: block;
-    width: calc(100% / 3);
-    background-color: #fff;
-    padding:8px 12px;
-    font-size: 12px;
-    text-align: center;
-    color: #565656;
-    border: 1px solid #DDDDDD;
-    float: left;
-    text-align: center;
-    transition: all 0.2s ease;
-    cursor: pointer;
-}
-
-// @media screen and (max-width: 767px) {
-//     .tab_item {
-//         padding: 12px 8px;
-//         font-size: 10px;
-//     }
-// }
-
-.tab_item:hover {
-    opacity: 0.8;
-}
-
-input[name="tab_item"] {
-    display: none;
-}
-
-.tab_content {
-    display: none;
-    clear: both;
-    overflow: hidden;
-    padding-top: 8px;
-}
-
-#chart:checked ~ #chart_content,
-#condition:checked ~ #condition_content{
-    display: block;
-}
-
-.tabs input:checked + .tab_item {
-    background-color: #F4D44E;
-    border: 1px solid #F4D44E;
-    color: #1B0D08;
-}
+@media screen and (max-width:768px){
     
+.input-underground,.input-condition{
+    display: block;
+}
+}
+
+.stepBar {
+    display: flex;
+    max-width: 400px;
+    position: relative;
+    margin: 20px auto;
+    text-align: center;
+  }
+  .stepBar li {
+    font-size: 12px;
+    list-style: none;
+    position: relative;
+    width: 33.333%;
+  }
+  .stepBar li:after {
+    background: #D0E1F9;
+    content: "";
+    width: calc(100% - 24px);
+    height: 4px;
+    position: absolute;
+    left: calc(-50% + 12px);
+    top: 10px;
+  }
+  .stepBar li:first-child:after {
+    display: none;
+  }
+  .stepBar li span {
+    background: #D0E1F9;
+    color: #ffffff;
+    display: inline-block;
+    height: 24px;
+    margin-bottom: 5px;
+    line-height: 24px;
+    width: 24px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+  }
+  .stepBar .visited:after {
+    background: #4D648D;
+  }
+  .stepBar .visited span {
+    background: #4D648D;
+  }
    

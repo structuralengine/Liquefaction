@@ -13,6 +13,7 @@ import { AppResultComponent } from './appresult.component'
 import { appChart } from './appinput-chart.component';
 import { appinputCondition } from './appinput-condition.component';
 import { appExplain } from './appexplain.component';
+import { appunderground} from './appinput-underground.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +21,9 @@ import { appExplain } from './appexplain.component';
     AppResultComponent,
     appChart,
     appinputCondition,
-    appExplain
-  ],
+    appExplain,
+    appunderground,
+    ],
   imports: [
     HttpClientModule,
     ChartsModule,
