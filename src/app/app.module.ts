@@ -23,7 +23,7 @@ import { appunderground} from './appinput-underground.component';
     appChart,
     appinputCondition,
     appExplain,
-    appunderground,
+    appunderground
     ],
   imports: [
     HttpClientModule,

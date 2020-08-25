@@ -1,18 +1,32 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild , OnInit ,OnDestroy} from '@angular/core';
 import { ChartDataSets, ChartOptions } from 'chart.js'; // データ型をimport
 import { Color, Label, BaseChartDirective } from 'ng2-charts'; // ng2-chartsのプロパティのデータ型をimport
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import * as FileSaver from 'file-saver';
+import {SaverdataService} from './saverdata/saverdata.service'
 
 @Component({
     selector: 'app-chart',
     templateUrl: './appinput-chart.component.html',
     styleUrls: ['./app.component.scss']
   })
-  export class appChart {
+  export class appChart implements OnInit, OnDestroy{
   
     @ViewChild(BaseChartDirective) chart: BaseChartDirective;
+    private selectedIndex: string 
+
+    constructor(private http: HttpClient,
+                private sd: SaverdataService) {
+    }
+                
+    ngOnInit() {
+      this.onSelectChange(this.sd.selectedIndex);
+    }
   
+    ngOnDestroy(){
+      this.sd.selectedIndex = this.selectedIndex;
+    }
+
     // data
     lineChartLabels: Label[] = [];
     lineChartData: ChartDataSets[] = [
@@ -34,12 +48,6 @@ import * as FileSaver from 'file-saver';
       responsive: true,
      
     };
-  
-    constructor(private http: HttpClient) {
-  
-      this.get("L2スペクトルⅡ(G5地盤).SPR");
-  
-    }
   
     onSelectChange(value) {
       switch (value) {
@@ -80,12 +88,12 @@ import * as FileSaver from 'file-saver';
           this.get("L2スペクトルⅡ(G5地盤).SPR")
           break;
       }
+      this.selectedIndex=value;
     }
   
     private get(filename: string): void {
       const url = 'assets/spec/' + filename;
       this.http.get(url, { responseType: 'text' }).subscribe(
-  
         data => {
           const yy: number[] = new Array();
           const xx: string[] = new Array();
@@ -104,7 +112,7 @@ import * as FileSaver from 'file-saver';
             this.chart.chart.data.datasets[0].data = yy;
             this.chart.chart.data.labels = xx;
             this.chart.chart.update()
-          }, 2000);
+          }, 1000);
   
         },
         error => {

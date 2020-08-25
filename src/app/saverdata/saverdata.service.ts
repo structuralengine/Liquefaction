@@ -11,5 +11,6 @@ export class SaverdataService {
   undergroundData1 = [[]];
   undergroundData2 = [[]];
   resultData  = [[]];
-  watertable
+  watertable;
+  selectedIndex = "g4_2";
 }
