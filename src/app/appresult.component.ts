@@ -75,16 +75,23 @@ export class AppResultComponent implements OnInit {
 
         body['g'] = yy;
 
-        this.http.post<any>('https://asia-northeast1-the-structural-engine.cloudfunctions.net/Liquefaction',
-          body, {
-          headers: new HttpHeaders({
+        const httpOptions = {
+          headers: new HttpHeaders({ 
             'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
           })
-        }).subscribe(
-          response => {
+      };
+
+        this.http.post(
+          'https://asia-northeast1-the-structural-engine.cloudfunctions.net/Liquefaction',
+          JSON.stringify(body),
+          httpOptions
+        ).toPromise()
+          .then((response) => {
             console.log(response);
           },
           error => {
+            alert('解析に失敗しました\n通信状態：' + error.statusText + '\nエラーメッセージ：' + error.message);
             console.log(error);
           }
         );
