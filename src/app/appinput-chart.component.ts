@@ -16,25 +16,12 @@ import { trimTrailingNulls } from '@angular/compiler/src/render3/view/util';
 export class appChart implements OnInit, OnDestroy {
 
   @ViewChild(BaseChartDirective) chart: BaseChartDirective;
-
-  public spectrumlist: any[] = [
-    { id: 'g0_1', name: 'L2スペクトルⅠ(G0地盤)', file: 'assets/spec/L2スペクトルⅠ(G0地盤).SPR' },
-    { id: 'g1_1', name: 'L2スペクトルⅠ(G1地盤)', file: 'assets/spec/L2スペクトルⅠ(G1地盤).SPR' },
-    { id: 'g2_1', name: 'L2スペクトルⅠ(G2地盤)', file: 'assets/spec/L2スペクトルⅠ(G2地盤).SPR' },
-    { id: 'g3_1', name: 'L2スペクトルⅠ(G3地盤)', file: 'assets/spec/L2スペクトルⅠ(G3地盤).SPR' },
-    { id: 'g4_1', name: 'L2スペクトルⅠ(G4地盤)', file: 'assets/spec/L2スペクトルⅠ(G4地盤).SPR' },
-    { id: 'g5_1', name: 'L2スペクトルⅠ(G5地盤)', file: 'assets/spec/L2スペクトルⅠ(G5地盤).SPR' },
-    { id: 'g0_2', name: 'L2スペクトルⅡ(G0地盤)', file: 'assets/spec/L2スペクトルⅡ(G0地盤).SPR' },
-    { id: 'g1_2', name: 'L2スペクトルⅡ(G1地盤)', file: 'assets/spec/L2スペクトルⅡ(G1地盤).SPR' },
-    { id: 'g2_2', name: 'L2スペクトルⅡ(G2地盤)', file: 'assets/spec/L2スペクトルⅡ(G2地盤).SPR' },
-    { id: 'g3_2', name: 'L2スペクトルⅡ(G3地盤)', file: 'assets/spec/L2スペクトルⅡ(G3地盤).SPR' },
-    { id: 'g4_2', name: 'L2スペクトルⅡ(G4地盤)', file: 'assets/spec/L2スペクトルⅡ(G4地盤).SPR' },
-    { id: 'g5_2', name: 'L2スペクトルⅡ(G5地盤)', file: 'assets/spec/L2スペクトルⅡ(G5地盤).SPR' }
-  ];
+  public spectrumlist
 
   constructor(private router: Router,
               private http: HttpClient,
               public sd: SaverdataService) {
+    this.spectrumlist = this.sd.spectrumlist;
   }
 
   ngOnInit() {
@@ -49,7 +36,7 @@ export class appChart implements OnInit, OnDestroy {
   lineChartData: ChartDataSets[] = [
     {
       data: [],
-      label: '加速度'
+      label: ""
     },
   ];
 
@@ -68,17 +55,16 @@ export class appChart implements OnInit, OnDestroy {
   };
 
   onSelectChange(value) {
-    for( const item of this.spectrumlist){
+    for( const item of this.sd.spectrumlist){
       if( item.id === value){
-        this.get(item.file);
+        this.get(item.file, item.name);
         break;
       }
     }
     this.sd.selectedIndex = value;
   }
 
-  private get(url: string): void {
-    //const url = 'assets/spec/' + filename;
+  private get(url: string, title: string): void {
     this.http.get(url, { responseType: 'text' }).subscribe(
       data => {
         const yy: number[] = new Array();
@@ -97,7 +83,9 @@ export class appChart implements OnInit, OnDestroy {
         setTimeout(() => {
           this.chart.chart.data.datasets[0].data = yy;
           this.chart.chart.data.labels = xx;
-          this.chart.chart.update()
+          this.chart.chart.options.title.display = true;
+          this.chart.chart.options.title.text = title;
+          this.chart.chart.update();
         }, 1000);
 
       },
