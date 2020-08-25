@@ -9,13 +9,17 @@ h1{
 }
 
 h2{
-    font-size: 22px;
+    font-size: 32px;
     font-weight: lighter;
     margin:0;
 }
 
 p{
     margin:0;
+}
+
+h2.explain, p.explain{
+padding-top:16px;
 }
 
 header{

@@ -3,7 +3,7 @@ import * as FileSaver from 'file-saver';
 
 import * as jexcel from 'jexcel';
 
-
+import {SaverdataService} from './saverdata/saverdata.service'
 
 @Component({
     selector: 'app-condition',
@@ -11,6 +11,9 @@ import * as jexcel from 'jexcel';
     styleUrls: ['./app.component.scss']
   })
   export class appinputCondition {
+
+    constructor(private sd: SaverdataService) { }
+
     save(): void {
       const data: string = "aaa";
   
@@ -24,7 +27,7 @@ import * as jexcel from 'jexcel';
 
   ngAfterViewInit() {
     jexcel(this.spreadsheet_1.nativeElement, {
-      data: [[]],
+      data: this.sd.condisionData1,
       columns: [
         { type: "text", width: "150px" ,title:"地層底面深度\n(m)"},
         
@@ -34,7 +37,7 @@ import * as jexcel from 'jexcel';
     });
 
     jexcel(this.spreadsheet_2.nativeElement, {
-        data: [[]],
+        data: this.sd.condisionData2,
         columns: [
           { type: "text", width: "150px" ,title:"R"},
           { type: "text", width: "150px" ,title:"N"}

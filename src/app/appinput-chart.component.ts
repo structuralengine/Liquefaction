@@ -32,18 +32,8 @@ import * as FileSaver from 'file-saver';
    
     lineChartOptions = {
       responsive: true,
-      scales: {
-        yAxes: [
-          {
-            ticks: {
-              min: -1200,
-              max: 1200,
-            }
-          }
-        ]
-      }
+     
     };
-  
   
     constructor(private http: HttpClient) {
   
