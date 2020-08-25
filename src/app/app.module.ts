@@ -9,12 +9,12 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { RouterModule } from '@angular/router';
 import { ChartsModule } from 'ng2-charts'; 
-
 import { AppResultComponent } from './appresult.component'
 import { appChart } from './appinput-chart.component';
 import { appinputCondition } from './appinput-condition.component';
 import { appExplain } from './appexplain.component';
 import { appunderground} from './appinput-underground.component';
+import { WaitDialogComponent } from './wait-dialog.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,8 @@ import { appunderground} from './appinput-underground.component';
     appChart,
     appinputCondition,
     appExplain,
-    appunderground
+    appunderground,
+    WaitDialogComponent
     ],
   imports: [
     HttpClientModule,
