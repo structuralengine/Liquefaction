@@ -6,8 +6,9 @@ import { Injectable } from '@angular/core';
 export class SaverdataService {
 
   constructor() { }
-
-  condisionData1  = [[]];
-  condisionData2  = [[]];
-
+  conditionData1  = [[]];
+  conditionData2  = [[]];
+  undergroundData1 = [[]];
+  undergroundData2 = [[]];
+  resultData  = [[]];
 }

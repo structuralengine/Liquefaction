@@ -1,6 +1,7 @@
 import { Component, ViewChild, ElementRef  } from '@angular/core';
 import * as FileSaver from 'file-saver';
 import * as jexcel from 'jexcel';
+import {SaverdataService} from './saverdata/saverdata.service'
 
 @Component({
   selector: 'appunderground-root',
@@ -10,15 +11,13 @@ import * as jexcel from 'jexcel';
 
 export class appunderground {
 
-  constructor() {
-
-  }
+  constructor(private sd: SaverdataService) { }
 
   @ViewChild("spreadsheet") spreadsheet: ElementRef;
 
   ngAfterViewInit() {
     jexcel(this.spreadsheet.nativeElement, {
-      data: [[]],
+     data: this.sd.undergroundData2,
       columns: [
         { type: "text", width: "150px" ,title:"地層底面深度\n(m)"},
         { type: "text", width: "150px" ,title:"湿潤単位\n体積重量γt\n(kN/m3)"},

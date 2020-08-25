@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import * as FileSaver from 'file-saver';
 import * as jexcel from 'jexcel';
+import {SaverdataService} from './saverdata/saverdata.service'
 
 @Component({
   selector: 'appresult-root',
@@ -12,9 +13,8 @@ import * as jexcel from 'jexcel';
 
 export class AppResultComponent implements OnInit {
 
-  constructor(private http: HttpClient) {
-
-  }
+  constructor(private http: HttpClient,
+    private sd: SaverdataService) { }
 
   @ViewChild("spreadsheet") spreadsheet: ElementRef;
 
@@ -50,7 +50,7 @@ export class AppResultComponent implements OnInit {
 
   ngAfterViewInit() {
     jexcel(this.spreadsheet.nativeElement, {
-      data: [[]],
+      data: this.sd.resultData,
       columns: [
         { type: "text", width: "150px" ,title:"液状化を検\n討する深度\n(m)"},
         { type: "text", width: "150px" ,title:"全上載圧σv\n(kN/m2)"},

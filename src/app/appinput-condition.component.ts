@@ -1,9 +1,8 @@
 import { Component, ViewChild,ElementRef } from '@angular/core';
 import * as FileSaver from 'file-saver';
-
 import * as jexcel from 'jexcel';
-
 import {SaverdataService} from './saverdata/saverdata.service'
+
 
 @Component({
     selector: 'app-condition',
@@ -11,7 +10,7 @@ import {SaverdataService} from './saverdata/saverdata.service'
     styleUrls: ['./app.component.scss']
   })
   export class appinputCondition {
-
+    water_table
     constructor(private sd: SaverdataService) { }
 
     save(): void {
@@ -27,7 +26,7 @@ import {SaverdataService} from './saverdata/saverdata.service'
 
   ngAfterViewInit() {
     jexcel(this.spreadsheet_1.nativeElement, {
-      data: this.sd.condisionData1,
+      data: this.sd.conditionData1,
       columns: [
         { type: "text", width: "150px" ,title:"地層底面深度\n(m)"},
         
@@ -37,7 +36,7 @@ import {SaverdataService} from './saverdata/saverdata.service'
     });
 
     jexcel(this.spreadsheet_2.nativeElement, {
-        data: this.sd.condisionData2,
+        data: this.sd.conditionData2,
         columns: [
           { type: "text", width: "150px" ,title:"R"},
           { type: "text", width: "150px" ,title:"N"}
