@@ -6,6 +6,7 @@ import * as FileSaver from 'file-saver';
 import {SaverdataService} from './saverdata/saverdata.service'
 import { NONE_TYPE } from '@angular/compiler';
 import { trimTrailingNulls } from '@angular/compiler/src/render3/view/util';
+import { formatDate } from '@angular/common';
 
 @Component({
     selector: 'app-chart',
@@ -47,8 +48,15 @@ import { trimTrailingNulls } from '@angular/compiler/src/render3/view/util';
     ];
     lineChartType = 'line'; // グラフの種類
     pointStyle='line';
+    lineChartLegend = false;
     lineChartOptions = {
       responsive: true,
+      elements: {
+        point:{
+            radius: 0
+        },
+           
+    }
   
     };
   
@@ -99,17 +107,19 @@ import { trimTrailingNulls } from '@angular/compiler/src/render3/view/util';
         data => {
           const yy: number[] = new Array();
           const xx: string[] = new Array();
-  
+        
           const lines = data.split('\n');
           for (let i = 2; i < lines.length; i++) {
             const line: string = lines[i];
-            const xy: string[] = line.trim().split(' ')
-            const x: string = xy[0];
+            const xy: string[] = line.trim().split(' ');
+            const x: string = xy[0]; 
+            let u:any=+x;
             const y: number = Number(xy[xy.length - 1]);
-            xx.push(x);
+           
+            xx.push(u);
             yy.push(y);
           }
-  
+        
           setTimeout(() => {
             this.chart.chart.data.datasets[0].data = yy;
             this.chart.chart.data.labels = xx;
@@ -160,3 +170,7 @@ import { trimTrailingNulls } from '@angular/compiler/src/render3/view/util';
   
   }
   
+
+    
+
+
