@@ -1,18 +1,12 @@
 <div class="button-area">
- <button class="button button-md color-y-bg">
-  <label>    
+  <button class="button button-md color-y-bg">
+    <label>
       <span>
-  ファイルを開く
-  <input type="file" accept="application/json" (change)="open($event)" style="display:none" />
-       </span>
-  </label>
-  </button>
-  <!-- <label>
-      <span>
-          ファイルを開く
-          <input type="file" accept="application/json" (change)="open($event)" style="display:none" />
+        ファイルを開く
+        <input type="file" accept="application/liq" (change)="open($event)" style="display:none" />
       </span>
-  </label> -->
+    </label>
+  </button>
   <button class="button button-md color-y-bg" id="spectra_file" (click)="save()">ファイル保存</button>
 </div>
 <ol class="stepBar">
@@ -22,17 +16,11 @@
   <li><a routerLink="/result"><span>4</span><br>結果</a></li>
 </ol>
 
- <div class="input-condition">
-<form>
-  <div #spreadsheet_1></div>
-</form>
+<div class="input-condition">
+  <form>
+    <div #spreadsheet_1></div>
+  </form>
   <form>
     <div #spreadsheet_2></div>
   </form>
-  </div>
-
-  
-
-
-
-  
+</div>
