@@ -4,6 +4,8 @@ import { Color, Label, BaseChartDirective } from 'ng2-charts'; // ng2-chartsの�
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import * as FileSaver from 'file-saver';
 import {SaverdataService} from './saverdata/saverdata.service'
+import { NONE_TYPE } from '@angular/compiler';
+import { trimTrailingNulls } from '@angular/compiler/src/render3/view/util';
 
 @Component({
     selector: 'app-chart',
@@ -39,14 +41,15 @@ import {SaverdataService} from './saverdata/saverdata.service'
     lineChartColors: Color[] = [
       {
         borderColor: 'black',
-        backgroundColor: 'rgba(255,0,255,0.28)',
+        borderWidth:1,
+        backgroundColor: 'rgba(255,255,255,255)',
       },
     ];
     lineChartType = 'line'; // グラフの種類
-   
+    pointStyle='line';
     lineChartOptions = {
       responsive: true,
-     
+  
     };
   
     onSelectChange(value) {
@@ -62,7 +65,6 @@ import {SaverdataService} from './saverdata/saverdata.service'
           break;
         case "g3_1":
           this.get("L2スペクトルⅠ(G3地盤).SPR")
-          break;
         case "g4_1":
           this.get("L2スペクトルⅠ(G4地盤).SPR")
           break
