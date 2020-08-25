@@ -11,4 +11,5 @@ export class SaverdataService {
   undergroundData1 = [[]];
   undergroundData2 = [[]];
   resultData  = [[]];
+  watertable
 }

@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef  } from '@angular/core';
+import { Component, ViewChild, ElementRef , OnInit ,OnDestroy } from '@angular/core';
 import * as FileSaver from 'file-saver';
 import * as jexcel from 'jexcel';
 import {SaverdataService} from './saverdata/saverdata.service'
@@ -9,11 +9,22 @@ import {SaverdataService} from './saverdata/saverdata.service'
   styleUrls: ['./app.component.scss']
 })
 
-export class appunderground {
+export class appunderground implements OnInit, OnDestroy{
+
+  watertable
 
   constructor(private sd: SaverdataService) { }
 
   @ViewChild("spreadsheet") spreadsheet: ElementRef;
+  
+  ngOnInit() {
+    this.watertable = this.sd.watertable;
+  }
+
+  ngOnDestroy(){
+    this.sd.watertable = this.watertable;
+  }
+
 
   ngAfterViewInit() {
     jexcel(this.spreadsheet.nativeElement, {
