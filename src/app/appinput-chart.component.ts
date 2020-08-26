@@ -49,8 +49,14 @@ export class appChart implements OnInit, OnDestroy {
   ];
   lineChartType = 'line'; // グラフの種類
   pointStyle = 'line';
+  lineChartLegend='false';
   lineChartOptions = {
     responsive: true,
+    elements:{
+      point:{
+        radius:0
+      },
+    }
 
   };
 
@@ -75,8 +81,9 @@ export class appChart implements OnInit, OnDestroy {
           const line: string = lines[i];
           const xy: string[] = line.trim().split(' ')
           const x: string = xy[0];
+          let u:any=+x;
           const y: number = Number(xy[xy.length - 1]);
-          xx.push(x);
+          xx.push(u);
           yy.push(y);
         }
 
