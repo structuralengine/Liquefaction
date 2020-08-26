@@ -5,6 +5,8 @@
   <li><a routerLink="/wait"><span>4</span><br>結果</a></li>
 </ol>
 
+<div class="explain-area mt-20">
+<h2 class="explain">グラフを選択</h2>
 <div class="button-area">
   <button class="button button-md color-y-bg">
     <label>
@@ -15,14 +17,14 @@
     </label>
   </button>
   <button class="button button-md color-y-bg" id="spectra_file" (click)="save()">ファイル保存</button>
+</div>　
 </div>
+<p class="explain mb-20 pc">波形データ(SPRファイル)をファイル選択から読み込み、液状化情報を知りたいデータを選択してください。</p>
 
-<h2 class="explain">グラフを選択</h2>
-　<p class="explain">液状化するかどうか調べたいグラフをファイル選択から選んでください</p>
 <div class="selectSpectra">
   <form>
     <select [(ngModel)]="sd.selectedIndex" (change)='onSelectChange($event.target.value)'>
-      <option *ngFor="let item of spectrumlist" [value]="item.id">
+      <option *ngFor="let item of spectrumlist" [value]="item.id" [selected]="1">
         {{item.name}}
       </option>
     </select>`
@@ -33,3 +35,5 @@
     [chartType]="lineChartType" [options]="lineChartOptions">
   </canvas>
 </div>
+
+<p class="explain mt-20 sp">※波形データ(SPRファイル)をファイル選択から読み込み、液状化情報を知りたいデータを選択してください。</p>

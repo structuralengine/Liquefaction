@@ -21,6 +21,14 @@ p{
     padding-top:16px;
 }
 
+.mt-20{
+    margin-top:24px;
+}
+
+.mb-20{
+    margin-bottom:24px;
+}
+
 
 header{
     background-color: 	#EEE8AA;
@@ -66,13 +74,13 @@ header .container .title{
     font-size: 14px;
 }
 
-.explain-content:after{
+.explain-area:after{
     content: "";
     display: block;
     clear: both;
 }
 
-.explain-content .explain{
+.explain-area .explain{
     float: left;
 }
 
@@ -137,7 +145,7 @@ header .container .title{
 
 }
 
-.explain-content .button-area {
+.explain-area .button-area {
     float: right;
     text-align: center;
     display: flex;
@@ -156,12 +164,12 @@ header .container .title{
     .pc{
         display: none;
     }  
-    .explain-content .explain{
+    .explain-area .explain{
         float: none;
        text-align: center;
     }
 
-    .explain-content .button-area {
+    .explain-area .button-area {
         float: none;
         text-align: center;
         display: flex;
@@ -172,17 +180,27 @@ header .container .title{
 }
 
 
-
 .input-underground,.input-condition{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+}
+
+.input-underground{
+    flex-flow: row-reverse;
+}
+
+.underground-image{
+    margin-right:32px;
 }
 
 @media screen and (max-width:767px){
     
 .input-underground,.input-condition{
     display: block;
+    padding:32px 0;
+    text-align: center;
 }
+
 }
 
 .stepBar {
@@ -229,4 +247,26 @@ header .container .title{
   }
   .stepBar .visited span {
     background: #068080;
+  }
+
+  .soilHorizon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 16px;
+  }
+
+  .soilHorizon label{
+      font-weight: bold;
+  }
+
+  .soilHorizon-input input{
+      width: 100px;
+      margin:0 12px 0 16px;
+      padding:4px 8px;
+      font-size: 16px;
+  }
+
+  .text-left{
+      text-align: left;
   }

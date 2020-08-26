@@ -32,8 +32,8 @@ export class appunderground implements OnInit, OnDestroy{
     jexcel(this.spreadsheet.nativeElement, {
      data: this.sd.undergroundData2,
       columns: [
-        { type: "text", width: "150px" ,title:"地層底面深度\n(m)"},
-        { type: "text", width: "150px" ,title:"湿潤単位\n体積重量γt\n(kN/m3)"},
+        { type: "text", width: "120px" ,title:"地層底面深度\n(m)"},
+        { type: "text", width: "120px" ,title:"湿潤単位\n体積重量γt\n(kN/m3)"},
        
       ],
       minDimensions: [2, 20]

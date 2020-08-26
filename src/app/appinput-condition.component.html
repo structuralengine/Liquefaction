@@ -1,25 +1,52 @@
-<div class="button-area">
-  <button class="button button-md color-y-bg">
-    <label>
-      <span>
-        ファイルを開く
-        <input type="file" accept="application/liq" (change)="open($event)" style="display:none" />
-      </span>
-    </label>
-  </button>
-  <button class="button button-md color-y-bg" id="spectra_file" (click)="save()">ファイル保存</button>
-</div>
 <ol class="stepBar">
-  <li><a routerLink="/chart"><span>1</span><br>グラフ</a></li>
-  <li><a routerLink="/underground"><span>2</span><br>地下水位</a></li>
-  <li class="visited"><a routerLink="/condition"> <span>3</span><br>地盤状態</a></li>
+  <li><a routerLink="/chart"><span>1</span><br>グラフ<br>(入力)</a></li>
+  <li ><a routerLink="/underground"><span>2</span><br>地下水位<br>(入力)</a></li>
+  <li class="visited"><a routerLink="/condition"> <span>3</span><br>室内土質試験<br>(入力)</a></li>
   <li><a routerLink="/wait"><span>4</span><br>結果</a></li>
 </ol>
+
+<div class="explain-area mt-20">
+  <h2 class="explain pc">室内土質試験結果（液状化を検討する深度）</h2>
+  <h2 class="explain sp">室内土質試験結果<br>（液状化を検討する深度）</h2>
+  <div class="button-area">
+    <button class="button button-md color-y-bg">
+      <label>
+        <span>
+          ファイルを開く
+          <input type="file" accept="application/liq" (change)="open($event)" style="display:none" />
+        </span>
+      </label>
+    </button>
+    <button class="button button-md color-y-bg" id="spectra_file" (click)="save()">ファイル保存</button>
+  </div>　
+  </div>
+  <p class="explain mb-20 pc">下図を参考に地下水位及び地層底面深度、湿潤単位体積重量を各層毎に入力してください。</p>
+
 
 <div class="input-condition">
   <form>
     <div #spreadsheet_1></div>
   </form>
+</div>
+
+<div class="explain-area mt-20">
+  <h2 class="explain pc">室内土質試験結果（R,N値）</h2>
+  <h2 class="explain sp">室内土質試験結果<br>（R,N値）</h2>
+  <div class="button-area">
+    <button class="button button-md color-y-bg">
+      <label>
+        <span>
+          ファイルを開く
+          <input type="file" accept="application/liq" (change)="open($event)" style="display:none" />
+        </span>
+      </label>
+    </button>
+    <button class="button button-md color-y-bg" id="spectra_file" (click)="save()">ファイル保存</button>
+  </div>　
+  </div>
+  <p class="explain mb-20 pc">下図を参考に地下水位及び地層底面深度、湿潤単位体積重量を各層毎に入力してください。</p>
+
+<div class="input-condition">
   <form>
     <div #spreadsheet_2></div>
   </form>

@@ -11,7 +11,7 @@ export class SaverdataService {
   public undergroundData2 = [[]];
   public resultData  = [[]];
   public watertable: number = null;
-  public selectedIndex = "g4_2";
+  public selectedIndex = "g5_2";
 
   public spectrumlist: any[] = [
     { id: 'g0_1', name: 'L2スペクトルⅠ(G0地盤)', file: 'assets/spec/L2スペクトルⅠ(G0地盤).SPR' },

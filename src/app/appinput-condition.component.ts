@@ -25,7 +25,7 @@ import {SaverdataService} from './saverdata/saverdata.service'
     jexcel(this.spreadsheet_1.nativeElement, {
       data: this.sd.conditionData1,
       columns: [
-        { type: "text", width: "150px" ,title:"液状化を検\n討する深度\n(m)"},
+        { type: "text", width: "120px" ,title:"液状化を検\n討する深度\n(m)"},
         
        
       ],
@@ -35,8 +35,8 @@ import {SaverdataService} from './saverdata/saverdata.service'
     jexcel(this.spreadsheet_2.nativeElement, {
         data: this.sd.conditionData2,
         columns: [
-          { type: "text", width: "150px" ,title:"R"},
-          { type: "text", width: "150px" ,title:"N"}
+          { type: "text", width: "120px" ,title:"R"},
+          { type: "text", width: "120px" ,title:"N"}
          
         ],
         minDimensions: [2, 20]
