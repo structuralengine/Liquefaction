@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { SaverdataService } from './saverdata/saverdata.service';
+import * as FileSaver from 'file-saver';
 
 @Component({
   selector: 'app-wait-dialog',
@@ -41,23 +42,16 @@ export class WaitDialogComponent implements OnInit {
     this.http.get(url, { responseType: 'text' }).subscribe(
       data => {
         const yy: number[] = new Array();
-        const xx: string[] = new Array();
 
         const lines = data.split('\n');
         let startpos: boolean = false;
         for (let i = 2; i < lines.length; i++) {
           const line: string = lines[i];
           const xy: string[] = line.trim().split(' ');
-          const x: string = xy[0];
           const y: number = Number(xy[xy.length - 1]);
           if ( y !== 0 ) {
-            startpos = true;
+            yy.push(y);
           }
-          if ( startpos === false ) {
-            continue;
-          }
-          xx.push(x);
-          yy.push(y);
         }
 
         body['g'] = yy;
@@ -69,6 +63,8 @@ export class WaitDialogComponent implements OnInit {
         };
         
         const js: string = JSON.stringify(body);
+        // const blob = new window.Blob([js], { type: 'text/plain' });
+        // FileSaver.saveAs(blob, 'test.json');
 
         this.http.post(
           'https://asia-northeast1-the-structural-engine.cloudfunctions.net/function-1',
