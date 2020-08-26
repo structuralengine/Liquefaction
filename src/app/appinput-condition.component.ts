@@ -1,4 +1,5 @@
 import { Component, ViewChild,ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 import * as FileSaver from 'file-saver';
 import * as jexcel from 'jexcel';
 import {SaverdataService} from './saverdata/saverdata.service'
@@ -10,15 +11,11 @@ import {SaverdataService} from './saverdata/saverdata.service'
     styleUrls: ['./app.component.scss']
   })
   export class appinputCondition {
-    water_table
-    constructor(private sd: SaverdataService) { }
 
-    save(): void {
-      const data: string = "aaa";
-  
-      const blob = new window.Blob([data], { type: 'text/plain' });
-      FileSaver.saveAs(blob, 'liquef.liq');
-    }
+    water_table
+
+    constructor(private router: Router,
+                private sd: SaverdataService) { }
 
     @ViewChild("spreadsheet_1") spreadsheet_1: ElementRef;
     @ViewChild("spreadsheet_2") spreadsheet_2: ElementRef;
@@ -28,7 +25,7 @@ import {SaverdataService} from './saverdata/saverdata.service'
     jexcel(this.spreadsheet_1.nativeElement, {
       data: this.sd.conditionData1,
       columns: [
-        { type: "text", width: "150px" ,title:"地層底面深度\n(m)"},
+        { type: "text", width: "150px" ,title:"液状化を検\n討する深度\n(m)"},
         
        
       ],
@@ -46,21 +43,26 @@ import {SaverdataService} from './saverdata/saverdata.service'
       });
     }
   
+    save(): void {
+      const data: string = this.sd.save();
+      const blob = new window.Blob([data], { type: 'text/plain' });
+      FileSaver.saveAs(blob, 'liquef.liq');
+    }
+  
     // ファイルを開く
     open(evt) {
       const file = evt.target.files[0];
-      const fileName = file.name;
       evt.target.value = '';
-      let data: any
       this.fileToText(file)
         .then(text => {
-          data = false;
+          this.sd.load(text);
         })
         .catch(err => {
           console.log(err);
         });
+        this.router.navigate(['/explain']);
     }
-  
+
     private fileToText(file): any {
       const reader = new FileReader();
       reader.readAsText(file);

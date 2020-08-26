@@ -1,4 +1,5 @@
 import { Component, ViewChild, ElementRef , OnInit ,OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 import * as FileSaver from 'file-saver';
 import * as jexcel from 'jexcel';
 import {SaverdataService} from './saverdata/saverdata.service'
@@ -13,7 +14,8 @@ export class appunderground implements OnInit, OnDestroy{
 
   watertable
 
-  constructor(private sd: SaverdataService) { }
+  constructor(private router: Router,
+              private sd: SaverdataService) { }
 
   @ViewChild("spreadsheet") spreadsheet: ElementRef;
   
@@ -39,8 +41,7 @@ export class appunderground implements OnInit, OnDestroy{
   }
 
   save(): void {
-    const data: string = "aaa";
-
+    const data: string = this.sd.save();
     const blob = new window.Blob([data], { type: 'text/plain' });
     FileSaver.saveAs(blob, 'liquef.liq');
   }
@@ -48,16 +49,15 @@ export class appunderground implements OnInit, OnDestroy{
   // ファイルを開く
   open(evt) {
     const file = evt.target.files[0];
-    const fileName = file.name;
     evt.target.value = '';
-    let data: any
     this.fileToText(file)
       .then(text => {
-        data = false;
+        this.sd.load(text);
       })
       .catch(err => {
         console.log(err);
       });
+      this.router.navigate(['/explain']);
   }
 
   private fileToText(file): any {

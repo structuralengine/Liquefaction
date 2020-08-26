@@ -1,38 +1,26 @@
+<div class="button-area">
+  <button class="button button-md color-y-bg">
+    <label>
+      <span>
+        ファイルを開く
+        <input type="file" accept="application/liq" (change)="open($event)" style="display:none" />
+      </span>
+    </label>
+  </button>
+  <button class="button button-md color-y-bg" id="spectra_file" (click)="save()">ファイル保存</button>
+</div>
 <ol class="stepBar">
   <li><a routerLink="/chart"><span>1</span><br>グラフ</a></li>
   <li><a routerLink="/underground"><span>2</span><br>地下水位</a></li>
   <li class="visited"><a routerLink="/condition"> <span>3</span><br>地盤状態</a></li>
-  <li><a routerLink="/result"><span>4</span><br>結果</a></li>
+  <li><a routerLink="/wait"><span>4</span><br>結果</a></li>
 </ol>
 
-<div class="explain-content">
-  <div class="explain">
-    <h2>グラフを選択</h2>
-  </div>
-  <div class="button-area">
-    <button class="button button-md color-y-bg">
-     <label>    
-         <span>
-     ファイルを開く
-     <input type="file" accept="application/json" (change)="open($event)" style="display:none" />
-         </span>
-     </label> </button>
-     <button class="button button-md color-y-bg" id="spectra_file" (click)="save()">ファイル保存</button>
- </div>
-</div>
-<p class="pc">液状化するかどうか調べたいグラフをファイル選択から選び、調べたいSPRデータをセレクターより選択してください。</p>
-
- <div class="input-condition">
-<form>
-  <div #spreadsheet_1></div>
-</form>
+<div class="input-condition">
+  <form>
+    <div #spreadsheet_1></div>
+  </form>
   <form>
     <div #spreadsheet_2></div>
   </form>
-  </div>
-
-  
-
-
-
-  
+</div>

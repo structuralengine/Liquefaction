@@ -1,52 +1,35 @@
 <ol class="stepBar">
-    <li class="visited"><a routerLink="/chart"><span>1</span><br>グラフ</a></li>
-    <li><a routerLink="/underground"><span>2</span><br>地下水位</a></li>
-    <li ><a routerLink="/condition"> <span>3</span><br>地盤状態</a></li>
-    <li><a routerLink="/result"><span>4</span><br>結果</a></li>
-  </ol>
+  <li class="visited"><a routerLink="/chart"><span>1</span><br>グラフ</a></li>
+  <li><a routerLink="/underground"><span>2</span><br>地下水位</a></li>
+  <li><a routerLink="/condition"> <span>3</span><br>地盤状態</a></li>
+  <li><a routerLink="/wait"><span>4</span><br>結果</a></li>
+</ol>
 
-<div class="explain-content">
-<div class="explain">
-  <h2>グラフを選択</h2>
-</div>
 <div class="button-area">
-    <button class="button button-md color-y-bg">
-     <label>    
-         <span>
-     ファイルを開く
-     <input type="file" accept="application/json" (change)="open($event)" style="display:none" />
-         </span>
-     </label> </button>
-     <button class="button button-md color-y-bg" id="spectra_file" (click)="save()">ファイル保存</button>
- </div>
+  <button class="button button-md color-y-bg">
+    <label>
+      <span>
+        ファイルを開く
+        <input type="file" accept="application/liq" (change)="open($event)" style="display:none" />
+      </span>
+    </label>
+  </button>
+  <button class="button button-md color-y-bg" id="spectra_file" (click)="save()">ファイル保存</button>
 </div>
-<p class="pc">液状化するかどうか調べたいグラフをファイル選択から選び、調べたいSPRデータをセレクターより選択してください。</p>
- <div class="selectSpectra">
-                <form>
-                <select name="selectedIndex" (change)='onSelectChange($event.target.value)'>
-                    <option value="g0_1" selected>L2スペクトルⅠ(G0地盤)</option>
-                    <option value="g1_1">L2スペクトルⅠ(G1地盤)</option>
-                    <option value="g2_1">L2スペクトルⅠ(G2地盤)</option>
-                    <option value="g3_1">L2スペクトルⅠ(G3地盤)</option>
-                    <option value="g4_1">L2スペクトルⅠ(G4地盤)</option>
-                    <option value="g5_1">L2スペクトルⅠ(G5地盤)</option>
-                    <option value="g0_2">L2スペクトルⅡ(G0地盤)</option>
-                    <option value="g1_2">L2スペクトルⅡ(G1地盤)</option>
-                    <option value="g2_2">L2スペクトルⅡ(G2地盤)</option>
-                    <option value="g3_2">L2スペクトルⅡ(G3地盤)</option>
-                    <option value="g4_2">L2スペクトルⅡ(G4地盤)</option>
-                    <option value="g5_2">L2スペクトルⅡ(G5地盤)</option>
-                </select>
-                </form>
-            </div>
-                    <div class="chart">
-                        <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [colors]="lineChartColors"
-                            [chartType]="lineChartType" [options]="lineChartOptions" [legend]="lineChartLegend">
-                        </canvas>
-                    </div>
 
-             <p class="sp">※液状化するかどうか調べたいグラフをファイル選択から選び、調べたいSPRデータをセレクターより選択してください。</p>
-
-
-
-
+<h2 class="explain">グラフを選択</h2>
+　<p class="explain">液状化するかどうか調べたいグラフをファイル選択から選んでください</p>
+<div class="selectSpectra">
+  <form>
+    <select [(ngModel)]="sd.selectedIndex" (change)='onSelectChange($event.target.value)'>
+      <option *ngFor="let item of spectrumlist" [value]="item.id">
+        {{item.name}}
+      </option>
+    </select>`
+  </form>
+</div>
+<div class="chart">
+  <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [colors]="lineChartColors"
+    [chartType]="lineChartType" [options]="lineChartOptions">
+  </canvas>
+</div>
