@@ -6,10 +6,10 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class SaverdataService {
 
-  public conditionData1  = [[]];  // 液状化を検討する深度
-  public conditionData2  = [[]];  // 室内試験結果 R, N
-  public undergroundData2 = [[]]; // 地層厚と単位体積従量
-  public resultData  = [[]];      // 解析結果
+  public conditionData1  = [];  // 液状化を検討する深度
+  public conditionData2  = [];  // 室内試験結果 R, N
+  public undergroundData2 = []; // 地層厚と単位体積従量
+  public resultData  = [];      // 解析結果
   public watertable: number = null; // 地下水位
   public selectedIndex = "g5_2";    // スペクトルの種類
 
