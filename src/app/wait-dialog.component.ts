@@ -4,18 +4,18 @@ import { Router } from '@angular/router';
 import { SaverdataService } from './saverdata/saverdata.service';
 import * as FileSaver from 'file-saver';
 import { newArray } from '@angular/compiler/src/util';
-
+​
 @Component({
   selector: 'app-wait-dialog',
   templateUrl: './wait-dialog.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class WaitDialogComponent implements OnInit {
-
+​
   constructor(private router: Router,
               private http: HttpClient,
               private sd: SaverdataService) { }
-
+​
   ngOnInit() {
     // スペクトルを取得
     for (const item of this.sd.spectrumlist) {
@@ -25,10 +25,10 @@ export class WaitDialogComponent implements OnInit {
       }
     }
   }
-
+​
   // スペクトルを取得
   private start(url: string): void {
-
+​
     // 室内試験結果を集計する
     const RN = this.getRN();
     if( RN.length < 5) {
@@ -36,7 +36,7 @@ export class WaitDialogComponent implements OnInit {
       this.router.navigate(['/condition']);
       return;
     }
-
+​
     // 液状化を検討する深度 の入力から有効な入力行を選択する
     const soil = [];
     for ( const column of this.sd.conditionData1 ){
@@ -57,7 +57,7 @@ export class WaitDialogComponent implements OnInit {
         this.router.navigate(['/underground']);
         return;
       }
-
+​
       soil.push({
         "sv": sv.sv,
         "svd": sv.svd,
@@ -65,15 +65,15 @@ export class WaitDialogComponent implements OnInit {
         "RN": RN
       });
     }
-
+​
     const body= { soil };
-
-
+​
+​
     // 加速度を集計する
     this.http.get(url, { responseType: 'text' }).subscribe(
       data => {
         const yy: number[] = new Array();
-
+​
         const lines = data.split('\n');
         let startpos: boolean = false;
         for (let i = 2; i < lines.length; i++) {
@@ -84,9 +84,9 @@ export class WaitDialogComponent implements OnInit {
             yy.push(y);
           }
         }
-
+​
         body['g'] = yy; // 加速度を追加
-
+​
         const httpOptions = {
           headers: new HttpHeaders({
             'Content-Type': 'application/json'
@@ -96,7 +96,7 @@ export class WaitDialogComponent implements OnInit {
         const js: string = JSON.stringify(body);
         // const blob = new window.Blob([js], { type: 'text/plain' });
         // FileSaver.saveAs(blob, 'test.json');
-
+​
         this.http.post(
           'https://asia-northeast1-the-structural-engine.cloudfunctions.net/function-1',
           js,
@@ -107,7 +107,7 @@ export class WaitDialogComponent implements OnInit {
               alert('解析に失敗しました\nエラーメッセージ：' + response['error']);
               this.router.navigate(['/condition']);
             }
-
+​
             if ( 'results' in response ) {
               const relist: [] = response['results'];
               for ( let i = 0; i < relist.length; i++ ){
@@ -117,7 +117,7 @@ export class WaitDialogComponent implements OnInit {
                   this.router.navigate(['/condition']);
                   return;
                 }
-
+​
                 // 計算結果を処理
                 const R: number = re['r']; 
                 const L: number = re['s']; 
@@ -128,16 +128,16 @@ export class WaitDialogComponent implements OnInit {
                 const Z = body.soil[i].Z;
                 const sv = body.soil[i].sv;
                 const svd = body.soil[i].svd;
-
+​
                 // 結果を格納する
                 this.sd.resultData.push([Z, sv, svd, R, L, FL, j])
-
+​
               }
               console.log(response);
               // 正常に処理が終了したら result 画面を表示する
               this.router.navigate(['/result']);
             }
-
+​
           },
             error => {
               alert('解析に失敗しました\n通信状態：' + error.statusText + '\nエラーメッセージ：' + error.message);
@@ -148,56 +148,25 @@ export class WaitDialogComponent implements OnInit {
       },
       error => {
         alert('スペクトルの読み込みに失敗しました\nエラーメッセージ：' + error);
-      }      
+        console.log(error);
+      }
+​
+​
     );
-    
   }
-
-  //全上載圧σvと有効上載厚σv’計算
-  private getSV(depth:number):any{
-    const result: any = { "sv":0, "svd":0};
-
-    let totalH:number = 0;
-    let weigth:number = 0;
-    for ( const column of this.sd.undergroundData2 ){
-
-      const height = this.toNumber(column[0])
-      if(height === null ){
-        continue;
-      }
-      const w = this.toNumber(column[1])
-      if(w===null){
-        continue;
-      }
-      weigth = w
-      if (totalH + height > depth){
-        break;
-      }
-      totalH += height;
-      result.sv += height * weigth;
-    }
-    const height = depth - totalH;
-    result.sv += height*weigth;
-
-    if(this.sd.watertable === null){
-      return null;
-    }
-    const up: number = depth - this.sd.watertable;
-    const wp: number = 10*up;
-
-    result.svd = result.sv - wp;
-
-    return result;
-  }
-
+​
+​
+​
+​
+​
   // 全上載圧σv と 有効上載圧σv' を計算する
   private getSv(depth: number): any {
     const result: any = { "sv": 0, "svd": 0 };
-
+​
     let totalH: number = 0;
     let weigth: number = 0;
     for ( const column of this.sd.undergroundData2 ){ // 地層厚と単位体積重量
-
+​
       const height = this.toNumber(column[0])
       if(height === null){
         continue;
@@ -215,19 +184,19 @@ export class WaitDialogComponent implements OnInit {
     }
     const height = depth - totalH;
     result.sv += height * weigth;
-
+​
     if ( this.sd.watertable === null){
       return null;
     }
     const up: number = depth - this.sd.watertable; // 水深
     const wp: number = 10 * up; // 浮力
-
+​
     result.svd = result.sv - wp;
-
+​
     return result;
-
+​
   }
-
+​
   // 室内試験
   private getRN() : any[] {
     const result: any[] = new Array();
@@ -244,7 +213,7 @@ export class WaitDialogComponent implements OnInit {
     }
     return result;
   }
-
+​
   /// <summary>
   /// 文字列string を数値にする
   /// </summary>
@@ -261,4 +230,5 @@ export class WaitDialogComponent implements OnInit {
     }
     return result;
   }
+​
 }

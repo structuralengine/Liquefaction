@@ -6,31 +6,28 @@
   </ol>
   <div class="explain-area result mt-20 mb-20">
     <h2 class="explain">計算結果</h2>　
-    <p>判定基準　○：液状化する　×：液状化しない</p>
   </div>
-
-<div class="result">
-  <table class="result">
-    <tr>
-      <th></th>
-      <th>液状化を検討する深度<br>(m)</th>
-      <th class="spnone">全上載圧<br>σv<br>(kN/m2)</th>
-      <th class="spnone">有効上載圧<br>σv'<br>(kN/m2)</th>
-      <th class="spnone">液状化強度比<br>R</th>
-      <th class="spnone">せん断応力比<br>L</th>
-      <th class="spnone">液状化抵抗率<br>FL</th>
-      <th>判定</th>
-    </tr>
-    <tr>
-      <td class="result_number"></td>
-      <td >データ</td>
-      <td class="spnone">データ</td>
-      <td class="spnone">データ</td>
-      <td class="spnone">データ</td>
-      <td class="spnone">データ</td>
-      <td class="spnone">データ</td>
-      <td>データ</td>
-    </tr>
-        
-  </table>
-</div>
+  <div class="result"> 
+    <table class="result">
+      <tr>
+        <th></th>
+        <th>液状化を検討する深度<br>(m)</th>
+        <th class="spnone">全上載圧<br>σv<br>(kN/m2)</th>
+        <th class="spnone">有効上載圧<br>σv'<br>(kN/m2)</th>
+        <th class="spnone">液状化強度比<br>R</th>
+        <th class="spnone">せん断応力比<br>L</th>
+        <th class="spnone">液状化抵抗率<br>FL</th>
+        <th>判定</th>
+      </tr>
+      <tr *ngFor="let resultData of Data; index as i">
+        <td class="result_number">{{i+1}}</td>
+        <td>{{resultData.sv}}</td>
+        <td class="spnone">{{resultData.svd}}</td>
+        <td class="spnone">{{resultData.R}}</td>
+        <td class="spnone">{{resultData.L}}</td>
+        <td class="spnone">{{resultData.FL}}</td>
+        <td class="spnone">{{resultData.u}}</td>
+        <td>{{resultData.j}}</td>
+      </tr>
+    </table>
+  </div> 
