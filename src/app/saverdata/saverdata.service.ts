@@ -6,12 +6,12 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class SaverdataService {
 
-  public conditionData1  = [[]];
-  public conditionData2  = [[]];
-  public undergroundData2 = [[]];
-  public resultData = [[]];
-  public watertable: number = null;
-  public selectedIndex = "g5_2";
+  public conditionData1  = [[]];  // 液状化を検討する深度
+  public conditionData2  = [[]];  // 室内試験結果 R, N
+  public undergroundData2 = [[]]; // 地層厚と単位体積従量
+  public resultData  = [[]];      // 解析結果
+  public watertable: number = null; // 地下水位
+  public selectedIndex = "g5_2";    // スペクトルの種類
 
   public spectrumlist: any[] = [
     { id: 'g0_1', name: 'L2スペクトルⅠ(G0地盤)', file: 'assets/spec/L2スペクトルⅠ(G0地盤).SPR' },
@@ -49,9 +49,6 @@ export class SaverdataService {
     }
     if('conditionData2' in data){
       this.conditionData2 = data.conditionData2;
-    }
-    if('undergroundData1' in data){
-      this.undergroundData1 = data.undergroundData1;
     }
     if('undergroundData2' in data){
       this.undergroundData2 = data.undergroundData2;
