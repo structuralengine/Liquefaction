@@ -71,6 +71,7 @@ header .container .title{
     display: block;
     padding:8px 12px;
     border-radius: 2px;
+    background-color: #ffffff;
     font-size: 14px;
 }
 
@@ -82,6 +83,11 @@ header .container .title{
 
 .explain-area .explain{
     float: left;
+}
+
+.explain-area.result p{
+    float:right;   
+    line-height: 45px;
 }
 
 .button-area {
@@ -175,6 +181,11 @@ header .container .title{
         display: flex;
         justify-content: center;
         margin:20px 0;
+    }
+
+    .explain-area.result p{
+        float:none;
+        text-align: center;   
     }
     
 }
@@ -270,3 +281,62 @@ header .container .title{
   .text-left{
       text-align: left;
   }
+
+  table.result{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+   
+  }
+  
+  table.result th,table.result td{
+    max-width: 30px;
+    padding: 8px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: normal;
+    border:1px solid #333333;
+  }
+
+  table.result th{
+    background-color: #fffacd;
+  }
+
+  table.result td.result_number{
+    width: 30px;
+  }
+@media screen and (max-width:767px){
+  table.result th.spnone,table.result td.spnone{
+    display: none;
+  }
+}
+
+.condition_pc{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.condition_pc .input-condition:first-child{
+    margin-right:16px;
+}
+
+.condition_pc .input-condition:last-child{
+    margin-left:16px;
+}
+
+@media screen and (max-width:767px){
+    .condition_pc{
+        display: block;
+        
+    }
+
+    .condition_pc .input-condition:first-child{
+        margin-right:0;
+    }
+    
+    .condition_pc .input-condition:last-child{
+        margin-left:0;
+    }
+  }
+  

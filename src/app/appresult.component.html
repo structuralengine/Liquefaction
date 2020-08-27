@@ -4,7 +4,33 @@
     <li ><a routerLink="/condition"> <span>3</span><br>地盤状態</a></li>
     <li class="visited"><a routerLink="/wait"><span>4</span><br>結果</a></li>
   </ol>
-<div>
-計算結果を表示する画面
+  <div class="explain-area result mt-20 mb-20">
+    <h2 class="explain">計算結果</h2>　
+    <p>判定基準　○：液状化する　×：液状化しない</p>
+  </div>
+
+<div class="result">
+  <table class="result">
+    <tr>
+      <th></th>
+      <th>液状化を検討する深度<br>(m)</th>
+      <th class="spnone">全上載圧<br>σv<br>(kN/m2)</th>
+      <th class="spnone">有効上載圧<br>σv'<br>(kN/m2)</th>
+      <th class="spnone">液状化強度比<br>R</th>
+      <th class="spnone">せん断応力比<br>L</th>
+      <th class="spnone">液状化抵抗率<br>FL</th>
+      <th>判定</th>
+    </tr>
+    <tr>
+      <td class="result_number"></td>
+      <td >データ</td>
+      <td class="spnone">データ</td>
+      <td class="spnone">データ</td>
+      <td class="spnone">データ</td>
+      <td class="spnone">データ</td>
+      <td class="spnone">データ</td>
+      <td>データ</td>
+    </tr>
+        
+  </table>
 </div>
-<div #spreadsheet></div>

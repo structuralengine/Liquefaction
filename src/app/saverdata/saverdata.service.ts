@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,9 +8,8 @@ export class SaverdataService {
 
   public conditionData1  = [[]];
   public conditionData2  = [[]];
-  public undergroundData1 = [[]];
   public undergroundData2 = [[]];
-  public resultData  = [[]];
+  public resultData = [[]];
   public watertable: number = null;
   public selectedIndex = "g5_2";
 
@@ -28,13 +28,13 @@ export class SaverdataService {
     { id: 'g5_2', name: 'L2スペクトルⅡ(G5地盤)', file: 'assets/spec/L2スペクトルⅡ(G5地盤).SPR' }
   ];
 
-  constructor() { }
+  constructor() {
+   }
 
   public save(): string {
     const result = {
       conditionData1: this.conditionData1,
       conditionData2: this.conditionData2,
-      undergroundData1: this.undergroundData1,
       undergroundData2: this.undergroundData2,
       watertable: this.watertable,
       selectedIndex: this.selectedIndex
