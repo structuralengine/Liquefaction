@@ -6,6 +6,15 @@
     <div class="title">
         <h1>液状化診断アプリ</h1>
     </div>
+    <div class="icons">
+        <label>
+          <span>
+            <i class="fas fa-file-import"></i>
+            <input type="file" accept="application/liq" (change)="open($event)" style="display:none" />
+          </span>
+        </label>
+        <a (click)="save()"><i class="far fa-save"></i></a>
+        </div>
     </div>
   </header>
 <body><div class="container"><router-outlet></router-outlet></div></body>
