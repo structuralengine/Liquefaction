@@ -21,13 +21,15 @@
       </tr>
       <tr *ngFor="let resultData of Data; index as i">
         <td class="result_number">{{i+1}}</td>
-        <td>{{resultData.sv}}</td>
-        <td class="spnone">{{resultData.svd}}</td>
-        <td class="spnone">{{resultData.R}}</td>
-        <td class="spnone">{{resultData.L}}</td>
-        <td class="spnone">{{resultData.FL}}</td>
-        <td class="spnone">{{resultData.u}}</td>
-        <td>{{resultData.j}}</td>
-      </tr>
+        <td>{{resultData[0]}}</td>
+        <td class="spnone">{{resultData[1]|number:0}}</td>
+        <td class="spnone">{{resultData[2]|number:0}}</td>
+        <td class="spnone">{{resultData[3]|number:0}}</td>
+        <td class="spnone">{{resultData[4]|number:0}}</td>
+        <td class="spnone">{{resultData[5]|number:0}}</td>
+        <td>{{resultData[6]}}</td>
+      </tr> 
     </table>
   </div> 
+
+  

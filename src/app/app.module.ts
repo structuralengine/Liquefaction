@@ -15,6 +15,7 @@ import { appinputCondition } from './appinput-condition.component';
 import { appExplain } from './appexplain.component';
 import { appunderground} from './appinput-underground.component';
 import { WaitDialogComponent } from './wait-dialog.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { WaitDialogComponent } from './wait-dialog.component';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    RouterModule
+    RouterModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

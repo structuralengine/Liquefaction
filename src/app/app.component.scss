@@ -214,6 +214,10 @@ header .container .title{
 
 }
 
+label{
+    margin-bottom: 0;
+}
+
 .stepBar {
     display: flex;
     justify-content:center;
@@ -260,6 +264,15 @@ header .container .title{
     background: #068080;
   }
 
+  .icons{
+      text-align:right;
+      font-size: 30px;
+  }
+
+  .icons label,.icons a{
+      margin:0 16px;
+  }
+
   .soilHorizon {
       display: flex;
       justify-content: center;
@@ -280,6 +293,10 @@ header .container .title{
 
   .text-left{
       text-align: left;
+  }
+
+  .text-center{
+      text-align: center;
   }
 
   table.result{
