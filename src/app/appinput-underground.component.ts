@@ -8,7 +8,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'appunderground-root',
   templateUrl: './appinput-underground.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss', './appinput-underground.component.scss']
 })
 
 // export class NgbdModalBasic {
