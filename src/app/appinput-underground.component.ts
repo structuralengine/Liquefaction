@@ -2,8 +2,10 @@ import { Component, ViewChild, ElementRef , OnInit ,OnDestroy } from '@angular/c
 import { Router } from '@angular/router';
 import * as FileSaver from 'file-saver';
 import * as jexcel from 'jexcel';
-import {SaverdataService} from './saverdata/saverdata.service'
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+
+import {SaverdataService} from './saverdata/saverdata.service'
+import { NgbdModalBasicComponent } from './ngbd-modal-basic/ngbd-modal-basic.component'
 
 @Component({
   selector: 'appunderground-root',
@@ -40,7 +42,8 @@ export class appunderground implements OnInit, OnDestroy{
   watertable
 
   constructor(private router: Router,
-              private sd: SaverdataService) { }
+              private sd: SaverdataService,
+              private modalService: NgbModal) { }
 
   @ViewChild("spreadsheet") spreadsheet: ElementRef;
   
@@ -63,6 +66,10 @@ export class appunderground implements OnInit, OnDestroy{
       ],
       minDimensions: [2, 20]
     });
+  }
+
+  view(){
+    this.modalService.open(NgbdModalBasicComponent);
   }
 
   save(): void {

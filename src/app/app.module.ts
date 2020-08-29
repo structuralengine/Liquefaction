@@ -16,6 +16,7 @@ import { appExplain } from './appexplain.component';
 import { appunderground} from './appinput-underground.component';
 import { WaitDialogComponent } from './wait-dialog.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbdModalBasicComponent } from './ngbd-modal-basic/ngbd-modal-basic.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     appinputCondition,
     appExplain,
     appunderground,
-    WaitDialogComponent
+    WaitDialogComponent,
+    NgbdModalBasicComponent
     ],
   imports: [
     HttpClientModule,
