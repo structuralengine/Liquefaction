@@ -32,7 +32,7 @@ export class WaitDialogComponent implements OnInit {
     // 室内試験結果を集計する
     const RN = this.getRN();
     if( RN.length < 5) {
-      alert('室内試験R, Nciの入力が少ない');
+      alert('室内土質試験結果R, Nの入力データ数が少ないです。');
       this.router.navigate(['/condition']);
       return;
     }
@@ -48,7 +48,7 @@ export class WaitDialogComponent implements OnInit {
       // 全上載圧σv と 有効上載圧σv' を集計する
       const sv = this.getSv(depth);
       if(sv === null){
-        alert('水位の入力が適切ではありません');
+        alert('地下水位の入力が適切ではありません');
         this.router.navigate(['/underground']);
         return;
       }

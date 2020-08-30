@@ -119,7 +119,7 @@ export class appChart implements OnInit, OnDestroy {
       .catch(err => {
         console.log(err);
       });
-      this.router.navigate(['/explain']);
+      this.router.navigate(['/chart']);
   }
 
   private fileToText(file): any {

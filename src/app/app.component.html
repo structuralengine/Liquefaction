@@ -1,10 +1,18 @@
 <header>
     <div class="container">
-    <div class="logo">
-        <img src="./assets/icons/liquefaction_logo.png" with="60" height="60" alt="logo">
+        <div class="header-center-items">
+         <div class="title">
+             <h1 class="wf-roundedmplus1c"><a routerLink="/explain">液状化診断アプリ</a></h1>
+        </div>
     </div>
-    <div class="title">
-        <h1>液状化診断アプリ</h1>
+    <div class="icons">
+        <label>
+          <span>
+            <i class="fas fa-file-import"></i>
+            <input type="file" accept="application/liq" (change)="open($event)" style="display:none" />
+          </span>
+        </label>
+        <a (click)="save()"><i class="far fa-save"></i></a>
     </div>
     </div>
   </header>

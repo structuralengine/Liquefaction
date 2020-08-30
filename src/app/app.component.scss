@@ -29,194 +29,90 @@ p{
     margin-bottom:24px;
 }
 
+.wf-roundedmplus1c { font-family: "Rounded Mplus 1c"; }
+
 
 header{
     background-color: 	#EEE8AA;
     box-shadow: 0 0 1px rgba(0,0,0,.125), 0 1px 3px rgba(0,0,0,.2);
 }
 
-header .container{
-    max-width: 1200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding:0 16px;
-}
-
-header .container .title{
-    color: #333333;
-    margin-left: 16px;
-   font-size: 16px;
-   font-weight: bold;
-}
 
 .container{
     max-width: 1200px;
     margin:0 auto;
     padding:16px;
     // border-bottom: 1px solid #DAA520;
-
 }
 
-.explain_detail{
-    margin:16px 0;
+header .container{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    position: relative;
+    max-width: 1200px;
+    padding:16px;
+}
+
+header .container .title{
+    color: #333333;
+   font-size: 16px;
+   font-weight: bold;
+}
+
+header img{
+    width: 60px;
+    height:60px;
+}
+
+.header-center-items{
+    display: flex;
+    align-items: center;
     text-align: center;
 }
 
-.selectSpectra{
-    padding:8px
+.icons{
+    position:absolute;
+    right: 8px;
+    font-size: 30px;
 }
 
-.selectSpectra select{
-    display: block;
-    padding:8px 12px;
-    border-radius: 2px;
-    background-color: #ffffff;
-    font-size: 14px;
-}
-
-.explain-area:after{
-    content: "";
-    display: block;
+.icons::after{
+    content:"";
     clear: both;
-}
-
-.explain-area .explain{
-    float: left;
-}
-
-.explain-area.result p{
-    float:right;   
-    line-height: 45px;
-}
-
-.button-area {
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    margin:20px 0;
-}
-
-.button{
-    margin:0 20px;
-}
-
-.button span::after{
-    opacity: 0.7;
-    cursor: pointer;
-}
-    
-.button:hover {
-    opacity: 0.7;
-    cursor: pointer;
-}
-
-.button-lg {
-    width:400px;
-    line-height: normal;
-    padding: 8px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight:bold;
-    border: none;
-    display: inline-block;
-    text-align: center;
-}
-    
-    
-.button-md {
-    width:100px;
-    line-height: normal;
-    padding: 8px;
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight:bold;
-    border: none;
-    /*aタグに付与した場合に見た目を揃える。*/
-    display: inline-block;
-    text-align: center;
-}
-      
-.button-white {
-    background-color: #fff;
-    border: 1px solid #dddddd;
-    color:#333333;
-
-}
-    
-.color-y-bg {
-    background-color: #F4D44E;
-    color:#333333;
-
-}
-
-.explain-area .button-area {
-    float: right;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    margin:20px 0;
-}
-
-.sp{
-    display: none;
-}
-
-@media screen and (max-width:767px){
-    .sp{
-        display: block;
-    }
-    .pc{
-        display: none;
-    }  
-    .explain-area .explain{
-        float: none;
-       text-align: center;
-    }
-
-    .explain-area .button-area {
-        float: none;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        margin:20px 0;
-    }
-
-    .explain-area.result p{
-        float:none;
-        text-align: center;   
-    }
-    
-}
-
-
-.input-underground,.input-condition{
-    display: flex;
-    justify-content: center;
-}
-
-.input-underground{
-    flex-flow: row-reverse;
-}
-
-.underground-image{
-    margin-right:32px;
-}
-
-@media screen and (max-width:767px){
-    
-.input-underground,.input-condition{
     display: block;
-    padding:32px 0;
-    text-align: center;
 }
 
+.icons label,.icons a{
+    float: left;
+    margin:0 16px;
+    cursor: pointer;
 }
 
 label{
+    display: block;
     margin-bottom: 0;
 }
+
+@media screen and (max-width:767px){
+    header .title h1{
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (max-width:540px){  
+    .icons{
+        position:absolute;
+        right: 0;
+        font-size: 22px;
+    }
+
+    .icons label,.icons a{
+    margin:0 8px;
+}
+}
+
 
 .stepBar {
     display: flex;
@@ -264,14 +160,212 @@ label{
     background: #068080;
   }
 
-  .icons{
-      text-align:right;
-      font-size: 30px;
-  }
+.firstPage-content .firstPage-content-detail{
+    display: flex;
+    justify-content: center;
+}
 
-  .icons label,.icons a{
-      margin:0 16px;
-  }
+.first-img,.first-context{
+    width: 50%;
+    padding:16px;
+}
+
+.first-context p{
+    font-size: 20px;
+}
+
+@media screen and (max-width:767px){
+    .firstPage-content .firstPage-content-detail{
+        display: block;
+    }
+    
+    .first-img,.first-context{
+        width: 100%;
+        padding:16px;
+    }
+}
+
+@media screen and (max-width:767px){
+    .firstPage-content h2{
+        font-size:24px;
+    }
+    
+    .firstPage-context p{
+        font-size: 16px;
+    }
+}
+
+.selectSpectra{
+    padding:8px
+}
+
+.selectSpectra select{
+    display: block;
+    padding:8px 12px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    font-size: 14px;
+}
+
+.explain-area.result p{
+    float:right;   
+    line-height: 45px;
+}
+
+.explain-area.underground .explain-area-title{
+    display: flex;
+}
+
+.explain-area .underground-img{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+    cursor: pointer;
+    color:#888888;
+    background-color: #ffffff;
+    border:1px solid #888888;
+    box-shadow: 0px 3px 6px #00000029;
+}
+
+@media screen and (max-width:767px){
+    .selectSpectra{
+        margin-top:16px;
+    }
+    .explain-area.underground .explain-area-title{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+.button-area {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin:20px 0;
+}
+
+.button-area.next {
+    justify-content: space-around;
+}
+
+.button span::after{
+    opacity: 0.7;
+    cursor: pointer;
+}
+    
+.button:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.button-lg {
+    width:300px;
+    line-height: normal;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight:bold;
+    border: none;
+    display: inline-block;
+    text-align: center;
+}
+    
+    
+.button-md {
+    width:250px;
+    line-height: normal;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight:bold;
+    border: none;
+    display: inline-block;
+    text-align: center;
+}
+      
+.button-white {
+    background-color: #fff;
+    border: 1px solid #dddddd;
+    color:#333333;
+}
+    
+.color-y-bg {
+    background-color: #ffcc00;
+    color:#333333;
+
+}
+
+.explain-area .button-area {
+    float: right;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin:20px 0;
+}
+
+.sp{
+    display: none;
+}
+
+@media screen and (max-width:767px){
+    .sp{
+        display: block;
+    }
+    .pc{
+        display: none;
+    }  
+    .explain-area .explain{
+        float: none;
+       text-align: center;
+    }
+
+    .explain-area .button-area {
+        float: none;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        margin:20px 0;
+    }
+
+    .explain-area.result p{
+        float:none;
+        text-align: center;   
+    }
+
+        
+.button-md.button-white {
+   margin-bottom: 20px;
+}
+    
+}
+
+
+.input-underground,.input-condition{
+    display: flex;
+    justify-content: center;
+}
+
+.input-underground{
+    flex-flow: row-reverse;
+}
+
+.underground-image{
+    margin-right:32px;
+}
+
+@media screen and (max-width:767px){
+    
+.input-underground,.input-condition{
+    display: block;
+    padding:32px 0;
+    text-align: center;
+}
+
+}
+
 
   .soilHorizon {
       display: flex;

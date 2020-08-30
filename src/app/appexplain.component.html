@@ -1,13 +1,22 @@
-<div class="explain">
-    <h2>はじめに</h2>
-    <p>aaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-    <div class="explain_detail">
-        <img src="./assets/icons/liquefaction.jpg" width="250" height="250" alt="説明">
+<div class="firstPage-content">
+    <h2>このアプリについて</h2>
+    <div class="firstPage-content-detail">
+    <div class="first-img">
+        <img src="./assets/icons/liquefaction_explain.jpg" width="100%" alt="説明">
     </div>
-    <div class="button-area">
-        <a routerLink="/chart">  
-            <button class="button button-lg color-y-bg ">
-           はじめる
-        </button></a>
+    <div class="first-context">
+    <p>   こちらのアプリでは鉄道構造物にL2地震動（非常に強い地震動）が発生した場合、液状化が発生するか判定したものになります。判定には土の繰り返し三軸圧縮試験によって液状化強度比Rと繰返し回数Ncの関係を計測している必要があります。L1地震動については検証いたしません。
+        判定方法は累積損傷度理論を採用しています。
+        土の繰り返し三軸圧縮試験から得られる液状化強度比Rと繰返し回数Ncと地震波形から得られるせん断応力比のピーク波列を抽出し、それらを比較することで実際の地盤における液状化強度比Rとせん断応力比Lを求めています。この二つの値を比較することで液状化判定を行っています。
+        <br>※判定結果と現象発生の有無は必ずしも一致しない場合があります。
+        </p>
     </div>
+    </div>
+</div>
+
+<div class="button-area">
+    <a routerLink="/chart">  
+        <button class="button button-lg color-y-bg ">
+       使ってみる
+    </button></a>
 </div>

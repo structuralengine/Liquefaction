@@ -89,7 +89,7 @@ export class appunderground implements OnInit, OnDestroy{
       .catch(err => {
         console.log(err);
       });
-      this.router.navigate(['/explain']);
+      this.router.navigate(['/condition']);
   }
 
   private fileToText(file): any {

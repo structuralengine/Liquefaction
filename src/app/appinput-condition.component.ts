@@ -25,7 +25,7 @@ import {SaverdataService} from './saverdata/saverdata.service'
     jexcel(this.spreadsheet_1.nativeElement, {
       data: this.sd.conditionData1,
       columns: [
-        { type: "text", width: "190px" ,title:"液状化を検討する深度\n(m)"},
+        { type: "text", width: "200px" ,title:"液状化を検討する深度\n(m)"},
         
        
       ],
@@ -35,9 +35,8 @@ import {SaverdataService} from './saverdata/saverdata.service'
     jexcel(this.spreadsheet_2.nativeElement, {
         data: this.sd.conditionData2,
         columns: [
-          { type: "text", width: "150px" ,title:"繰返し応力振幅比\nR"},
-          { type: "text", width: "150px" ,title:"繰返し載荷回数\nN"}
-         
+          { type: "text", width: "110px" ,title:"応力振幅比\nR"},
+          { type: "text", width: "110px" ,title:"載荷回数\nN"}
         ],
         minDimensions: [2, 20]
       });
@@ -60,7 +59,7 @@ import {SaverdataService} from './saverdata/saverdata.service'
         .catch(err => {
           console.log(err);
         });
-        this.router.navigate(['/explain']);
+        this.router.navigate(['/condition']);
     }
 
     private fileToText(file): any {
