@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1598658826835,
+  "timestamp": 1598824169966,
   "index": "https://structuralengine.github.io/Liquefaction/index.html",
   "assetGroups": [
     {
@@ -11,9 +11,8 @@
         "ignoreVary": true
       },
       "urls": [
-        "https://structuralengine.github.io/Liquefaction/favicon.ico",
         "https://structuralengine.github.io/Liquefaction/index.html",
-        "https://structuralengine.github.io/Liquefaction/main.6413d7c583afd736f1e4.js",
+        "https://structuralengine.github.io/Liquefaction/main.914d2b654f57837f97cb.js",
         "https://structuralengine.github.io/Liquefaction/manifest.webmanifest",
         "https://structuralengine.github.io/Liquefaction/polyfills.4dc3b73f451c53467b36.js",
         "https://structuralengine.github.io/Liquefaction/runtime.e227d1a0e31cbccbf8ec.js",
@@ -40,7 +39,9 @@
         "https://structuralengine.github.io/Liquefaction/assets/icons/icon-72x72.png",
         "https://structuralengine.github.io/Liquefaction/assets/icons/icon-96x96.png",
         "https://structuralengine.github.io/Liquefaction/assets/icons/liquefaction.jpg",
+        "https://structuralengine.github.io/Liquefaction/assets/icons/liquefaction_explain.jpg",
         "https://structuralengine.github.io/Liquefaction/assets/icons/liquefaction_logo.png",
+        "https://structuralengine.github.io/Liquefaction/assets/icons/logo2.png",
         "https://structuralengine.github.io/Liquefaction/assets/icons/note.png",
         "https://structuralengine.github.io/Liquefaction/assets/icons/underground.jpg",
         "https://structuralengine.github.io/Liquefaction/assets/img/loading.gif",
@@ -87,7 +88,9 @@
     "https://structuralengine.github.io/Liquefaction/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "https://structuralengine.github.io/Liquefaction/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "https://structuralengine.github.io/Liquefaction/assets/icons/liquefaction.jpg": "d3c773c3df6e8627fdc8ebaf170bd0077861ba67",
-    "https://structuralengine.github.io/Liquefaction/assets/icons/liquefaction_logo.png": "108869deae99ef0a7b2937b97d69c6d3a600711a",
+    "https://structuralengine.github.io/Liquefaction/assets/icons/liquefaction_explain.jpg": "d779b186edad2f143ce2d2e4ea4cf7b6a499f953",
+    "https://structuralengine.github.io/Liquefaction/assets/icons/liquefaction_logo.png": "47f6b01a585da985ad50490ca512a84616d7de26",
+    "https://structuralengine.github.io/Liquefaction/assets/icons/logo2.png": "21992635bfa604d105d46cd3b72a79c1a8de8cca",
     "https://structuralengine.github.io/Liquefaction/assets/icons/note.png": "37bb69fa40f962555acf0ecd176662de6cf8a621",
     "https://structuralengine.github.io/Liquefaction/assets/icons/underground.jpg": "28ba0fa2b9b92271c0bb4f2c022eb0cc9e00cb99",
     "https://structuralengine.github.io/Liquefaction/assets/img/loading.gif": "8b4af9b60120601bcf23506de424223698725e7d",
@@ -118,9 +121,8 @@
     "https://structuralengine.github.io/Liquefaction/fa-solid-900.4055b0575d40bfb3c7e8.woff2": "6290834672aba86d5b6c1c73b30b57c9c53996f7",
     "https://structuralengine.github.io/Liquefaction/fa-solid-900.a480ec972cb6bce30533.ttf": "874c650701d0cbfb8f1de48a496dabed3bbf22e6",
     "https://structuralengine.github.io/Liquefaction/fa-solid-900.dfaa060a451d978c2565.eot": "96a5637429426764ea9b28bf4d1eb55ae10de57e",
-    "https://structuralengine.github.io/Liquefaction/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://structuralengine.github.io/Liquefaction/index.html": "2aa06659b02c8c0da3f5a056626fa3b2ccb15ca4",
-    "https://structuralengine.github.io/Liquefaction/main.6413d7c583afd736f1e4.js": "33945d737adf6abad25e006785d742296d7dda21",
+    "https://structuralengine.github.io/Liquefaction/index.html": "8f7ce9e28c878b45acfa3c9dc164fcddef80a8c6",
+    "https://structuralengine.github.io/Liquefaction/main.914d2b654f57837f97cb.js": "59fb1051f078a43dd5e6ed00aa1a4a0f3c3a62eb",
     "https://structuralengine.github.io/Liquefaction/manifest.webmanifest": "6204e5cafe5fc65a3c4aa1c70e99d373a41caa94",
     "https://structuralengine.github.io/Liquefaction/polyfills.4dc3b73f451c53467b36.js": "91f4e3fd70316d9cb796b0ec07e8fe7fbbf93b15",
     "https://structuralengine.github.io/Liquefaction/runtime.e227d1a0e31cbccbf8ec.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
