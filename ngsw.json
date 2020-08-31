@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1598853652018,
+  "timestamp": 1598854374505,
   "index": "https://structuralengine.github.io/Liquefaction/index.html",
   "assetGroups": [
     {
@@ -38,6 +38,7 @@
         "https://structuralengine.github.io/Liquefaction/assets/icons/icon-512x512.png",
         "https://structuralengine.github.io/Liquefaction/assets/icons/icon-72x72.png",
         "https://structuralengine.github.io/Liquefaction/assets/icons/icon-96x96.png",
+        "https://structuralengine.github.io/Liquefaction/assets/icons/icon.png",
         "https://structuralengine.github.io/Liquefaction/assets/icons/liquefaction.jpg",
         "https://structuralengine.github.io/Liquefaction/assets/icons/liquefaction_explain.jpg",
         "https://structuralengine.github.io/Liquefaction/assets/icons/liquefaction_logo.png",
@@ -87,6 +88,7 @@
     "https://structuralengine.github.io/Liquefaction/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
     "https://structuralengine.github.io/Liquefaction/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "https://structuralengine.github.io/Liquefaction/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "https://structuralengine.github.io/Liquefaction/assets/icons/icon.png": "47f6b01a585da985ad50490ca512a84616d7de26",
     "https://structuralengine.github.io/Liquefaction/assets/icons/liquefaction.jpg": "d3c773c3df6e8627fdc8ebaf170bd0077861ba67",
     "https://structuralengine.github.io/Liquefaction/assets/icons/liquefaction_explain.jpg": "d779b186edad2f143ce2d2e4ea4cf7b6a499f953",
     "https://structuralengine.github.io/Liquefaction/assets/icons/liquefaction_logo.png": "47f6b01a585da985ad50490ca512a84616d7de26",
