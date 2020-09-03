@@ -6,11 +6,103 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class SaverdataService {
 
-  public conditionData1  = [];  // 液状化を検討する深度
-  public conditionData2  = [];  // 室内試験結果 R, N
-  public undergroundData2 = []; // 地層厚と単位体積従量
-  public resultData  = [];      // 解析結果
-  public watertable: number = null; // 地下水位
+  public conditionData1  = [
+    [
+        "3.00"
+    ],
+    [
+        "4.00"
+    ],
+    [
+        "4.70"
+    ]
+];  // 液状化を検討する深度
+  public conditionData2  = [
+    [
+      "0.70",
+      "24.6"
+  ],
+  [
+      "0.55",
+      "32.3"
+  ],
+  [
+      "0.48",
+      "40.0"
+  ],
+  [
+      "0.44",
+      "47.7"
+  ],
+  [
+      "0.41",
+      "55.4"
+  ],
+  [
+      "0.39",
+      "63.1"
+  ],
+  [
+      "0.37",
+      "70.8"
+  ],
+  [
+      "0.36",
+      "78.5"
+  ],
+  [
+      "0.34",
+      "86.2"
+  ],
+  [
+      "0.32",
+      "99.4"
+  ],
+  [
+      "0.30",
+      "112.6"
+  ],
+  [
+      "0.29",
+      "125.8"
+  ],
+  [
+      "0.28",
+      "139"
+  ],
+  [
+      "0.27",
+      "152.2"
+  ],
+  [
+      "0.26",
+      "165.4"
+  ],
+  [
+      "0.25",
+      "178.6"
+  ],
+  [
+      "0.24",
+      "191.8"
+  ],
+  [
+      "0.23",
+      "205.0"
+  ]
+  ];  // 室内試験結果 R, N
+  public undergroundData2 = [
+    [
+      "2.0",
+      "17"
+  ],
+  [
+      "11.6",
+      "18"
+  ]
+  ]; // 地層厚と単位体積従量
+  public resultData  = [  ];      // 解析結果
+  public watertable: number = 1.26; // 地下水位
   public selectedIndex = "g5_2";    // スペクトルの種類
 
   public spectrumlist: any[] = [

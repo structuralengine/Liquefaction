@@ -27,8 +27,9 @@ export class WaitDialogComponent implements OnInit {
   }
 ​
   // スペクトルを取得
+
   private start(url: string): void {
-​
+​   this.sd.resultData  = [];
     // 室内試験結果を集計する
     const RN = this.getRN();
     if( RN.length < 5) {

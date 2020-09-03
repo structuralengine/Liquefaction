@@ -13,30 +13,6 @@ import { NgbdModalBasicComponent } from './ngbd-modal-basic/ngbd-modal-basic.com
   styleUrls: ['./app.component.scss']
 })
 
-// export class NgbdModalBasic {
-//   closeResult = '';
-
-//   constructor(private modalService: NgbModal) {}
-
-//   open(content) {
-//     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-//       this.closeResult = `Closed with: ${result}`;
-//     }, (reason) => {
-//       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-//     });
-//   }
-
-//   private getDismissReason(reason: any): string {
-//     if (reason === ModalDismissReasons.ESC) {
-//       return 'by pressing ESC';
-//     } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-//       return 'by clicking on a backdrop';
-//     } else {
-//       return `with: ${reason}`;
-//     }
-//   }
-// }
-
 export class appunderground implements OnInit, OnDestroy{
 
   watertable
@@ -59,10 +35,9 @@ export class appunderground implements OnInit, OnDestroy{
   ngAfterViewInit() {
     jexcel(this.spreadsheet.nativeElement, {
      data: this.sd.undergroundData2,
-      columns: [
-        { type: "text", width: "120px" ,title:"地層厚\n(m)"},
-        { type: "text", width: "120px" ,title:"湿潤単位\n体積重量γt\n(kN/m3)"},
-       
+      columns:[
+        { type: 'numeric', title:'地層厚\n(m)', width:120, mask:"#,##.#", decimal:'.' },
+        { type: 'numeric', title:'湿潤単位\n体積重量γt\n(kN/m3)', width:120, mask:"#,##.#", decimal:'.'  },
       ],
       minDimensions: [2, 20]
     });
