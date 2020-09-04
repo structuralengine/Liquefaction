@@ -92,19 +92,19 @@ label{
 
 .fukidashi {
     display: none;
-    top: 60px;
+    top: 53px;
     position: absolute;
     padding: 4px 8px;
     border-radius: 5px;
-    color: #555;
+    color: #333333;
     font-size: 12px;
-    background: #FFF;
-    border: solid 3px #555;
+    background: #ffffff;
+    border: solid 2px #333333;
     box-sizing: border-box;
 }
 
 .fukidashi.import{
-    width: 148px;
+    width: 140px;
     right:0;
 }
 
@@ -119,7 +119,7 @@ label{
     top: -24px;
     margin-left: -15px;
     border: 12px solid transparent;
-    border-bottom: 12px solid #FFF;
+    border-bottom: 14px solid #ffffff;
     z-index: 2;
   }
   
@@ -129,12 +129,12 @@ label{
     top: -30px;
     margin-left: -17px;
     border: 14px solid transparent;
-    border-bottom: 14px solid #555;
+    border-bottom: 16px solid #333333;
     z-index: 1;
   }
 
   .fukidashi.import:before,.fukidashi.import:after{
-    left:45%;
+    left:40%;
   }
 
   .fukidashi.export:before,.fukidashi.export:after{
@@ -151,17 +151,17 @@ label{
     .icons{
         right: 16px;
     }
-    .fukidashi.import{
-        right:0px;
+
+    .icons label:hover + .fukidashi,
+.icons a:hover + .fukidashi{
+    display: none;
+}
+
+.icons label,.icons a{
+    margin:0;
     }
 
-    .icons label,.icons a{
-        margin:0;
-    }
-
-    .fukidashi.import:before,.fukidashi.import:after{
-        left:93%;
-     }
+    
     
 }
 
@@ -174,9 +174,7 @@ label{
     margin:0;
     }
 
-    .fukidashi.import:before,.fukidashi.import:after{
-        left:90%;
-     }
+    
 }
 
 
