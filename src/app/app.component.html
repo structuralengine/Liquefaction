@@ -4,15 +4,17 @@
          <div class="title">
              <h1 class="wf-roundedmplus1c"><a routerLink="/explain">液状化診断アプリ</a></h1>
         </div>
-    </div>
-    <div class="icons">
+       </div>
+       <div class="icons">
         <label>
           <span>
             <i class="fas fa-file-import"></i>
             <input type="file" accept="application/liq" (change)="open($event)" style="display:none" />
           </span>
         </label>
-        <a (click)="save()" class="pc"><i class="far fa-save"></i></a>
+        <p class="fukidashi import">ファイルをインポート</p>
+        <a (click)="save()" class="pc"><i class="far fa-save pc"></i></a>
+        <p class="fukidashi export pc">ファイルを保存</p>
     </div>
     </div>
   </header>

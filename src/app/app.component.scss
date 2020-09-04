@@ -47,10 +47,10 @@ header{
 }
 
 header .container{
-    display: flex;
-    justify-content: center;
-    align-items:center;
     position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items:center;
     max-width: 1200px;
     padding:16px;
    
@@ -68,25 +68,17 @@ header img{
 }
 
 .header-center-items{
-    display: flex;
-    align-items: center;
-    text-align: center;
+    margin-left: auto;
+   margin-right: auto;
 }
 
 .icons{
-    position:absolute;
-    right: 8px;
     font-size: 30px;
 }
 
-.icons::after{
-    content:"";
-    clear: both;
-    display: block;
-}
 
 .icons label,.icons a{
-    float: left;
+    display: inline;
     margin:0 16px;
     cursor: pointer;
 }
@@ -96,23 +88,91 @@ label{
     margin-bottom: 0;
 }
 
+.fukidashi {
+    display: none;
+    max-width: 190px;
+    top: 70px;
+    position: absolute;
+    padding: 4px 8px;
+    border-radius: 5px;
+    color: #555;
+    font-size: 16px;
+    background: #FFF;
+    border: solid 3px #555;
+    box-sizing: border-box;
+}
+
+.fukidashi.import{
+    right:0;
+}
+
+.fukidashi.export{
+    right:0;
+}
+
+.fukidashi:before {
+    content: "";
+    position: absolute;
+    top: -24px;
+    left: 50%;
+    margin-left: -15px;
+    border: 12px solid transparent;
+    border-bottom: 12px solid #FFF;
+    z-index: 2;
+  }
+  
+  .fukidashi:after {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    margin-left: -17px;
+    border: 14px solid transparent;
+    border-bottom: 14px solid #555;
+    z-index: 1;
+  }
+
+  .fukidashi.import:before,.fukidashi.import:after{
+    left:45%;
+  }
+
+  .fukidashi.export:before,.fukidashi.export:after{
+     left:70%;
+}
+
+.icons label:hover + .fukidashi,
+.icons a:hover + .fukidashi{
+    display: block;
+}
+
+
 @media screen and (max-width:767px){
-    header .title h1{
-        font-size: 20px;
+    .fukidashi.import{
+        right:0px;
     }
 
+    .icons label,.icons a{
+        margin:0;
+    }
+
+    .fukidashi.import:before,.fukidashi.import:after{
+        left:85%;
+     }
+    
 }
 
 @media screen and (max-width:540px){  
     .icons{
-        position:absolute;
-        right: 0;
-        font-size: 22px;
+        font-size: 24px;
     }
 
     .icons label,.icons a{
-    margin:0 8px;
-}
+    margin:0;
+    }
+
+    .fukidashi.import:before,.fukidashi.import:after{
+        left:90%;
+     }
 }
 
 
