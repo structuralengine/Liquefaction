@@ -73,6 +73,8 @@ header img{
 }
 
 .icons{
+    position: absolute;
+    right: 0;
     font-size: 30px;
 }
 
@@ -90,23 +92,24 @@ label{
 
 .fukidashi {
     display: none;
-    max-width: 190px;
-    top: 70px;
+    top: 60px;
     position: absolute;
     padding: 4px 8px;
     border-radius: 5px;
     color: #555;
-    font-size: 16px;
+    font-size: 12px;
     background: #FFF;
     border: solid 3px #555;
     box-sizing: border-box;
 }
 
 .fukidashi.import{
+    width: 148px;
     right:0;
 }
 
 .fukidashi.export{
+    width: 110px;
     right:0;
 }
 
@@ -114,7 +117,6 @@ label{
     content: "";
     position: absolute;
     top: -24px;
-    left: 50%;
     margin-left: -15px;
     border: 12px solid transparent;
     border-bottom: 12px solid #FFF;
@@ -125,7 +127,6 @@ label{
     content: "";
     position: absolute;
     top: -30px;
-    left: 50%;
     margin-left: -17px;
     border: 14px solid transparent;
     border-bottom: 14px solid #555;
@@ -137,7 +138,7 @@ label{
   }
 
   .fukidashi.export:before,.fukidashi.export:after{
-     left:70%;
+     left:77%;
 }
 
 .icons label:hover + .fukidashi,
@@ -147,6 +148,9 @@ label{
 
 
 @media screen and (max-width:767px){
+    .icons{
+        right: 16px;
+    }
     .fukidashi.import{
         right:0px;
     }
@@ -156,7 +160,7 @@ label{
     }
 
     .fukidashi.import:before,.fukidashi.import:after{
-        left:85%;
+        left:93%;
      }
     
 }
