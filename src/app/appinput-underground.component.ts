@@ -1,10 +1,10 @@
-import { Component, ViewChild, ElementRef , OnInit ,OnDestroy } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import * as FileSaver from 'file-saver';
 import * as jexcel from 'jexcel';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
-import {SaverdataService} from './saverdata/saverdata.service'
+import { SaverdataService } from './saverdata/saverdata.service'
 import { NgbdModalBasicComponent } from './ngbd-modal-basic/ngbd-modal-basic.component'
 
 @Component({
@@ -13,37 +13,37 @@ import { NgbdModalBasicComponent } from './ngbd-modal-basic/ngbd-modal-basic.com
   styleUrls: ['./app.component.scss']
 })
 
-export class appunderground implements OnInit, OnDestroy{
+export class appunderground implements OnInit, OnDestroy {
 
   watertable
 
   constructor(private router: Router,
-              private sd: SaverdataService,
-              private modalService: NgbModal) { }
+    private sd: SaverdataService,
+    private modalService: NgbModal) { }
 
   @ViewChild("spreadsheet") spreadsheet: ElementRef;
-  
+
   ngOnInit() {
     this.watertable = this.sd.watertable;
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.sd.watertable = this.watertable;
   }
 
 
   ngAfterViewInit() {
     jexcel(this.spreadsheet.nativeElement, {
-     data: this.sd.undergroundData2,
-      columns:[
-        { type: 'numeric', title:'地層厚\n(m)', width:120, mask:"#,##.#", decimal:'.' },
-        { type: 'numeric', title:'湿潤単位\n体積重量γt\n(kN/m3)', width:120, mask:"#,##.#", decimal:'.'  },
+      data: this.sd.undergroundData2,
+      columns: [
+        { type: 'numeric', title: '地層厚\n(m)', width: 120},
+        { type: 'numeric', title: '湿潤単位\n体積重量γt\n(kN/m3)', width: 120 }
       ],
       minDimensions: [2, 20]
     });
   }
 
-  view(){
+  view() {
     this.modalService.open(NgbdModalBasicComponent);
   }
 
@@ -64,7 +64,7 @@ export class appunderground implements OnInit, OnDestroy{
       .catch(err => {
         console.log(err);
       });
-      this.router.navigate(['/condition']);
+    this.router.navigate(['/condition']);
   }
 
   private fileToText(file): any {
@@ -80,6 +80,6 @@ export class appunderground implements OnInit, OnDestroy{
     });
   }
 
-  
+
 
 }

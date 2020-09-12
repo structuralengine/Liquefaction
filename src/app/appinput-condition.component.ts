@@ -25,7 +25,7 @@ import {SaverdataService} from './saverdata/saverdata.service'
     jexcel(this.spreadsheet_1.nativeElement, {
       data: this.sd.conditionData1,
       columns: [
-        {type:'numeric', width: "200px" ,title:"液状化を検討する深度\n(m)" ,mask:"#,##.#", decimal:'.' },
+        {type:'numeric', width: "200px" ,title:"液状化を検討する深度\n(m)"  },
         
        
       ],
@@ -35,8 +35,8 @@ import {SaverdataService} from './saverdata/saverdata.service'
     jexcel(this.spreadsheet_2.nativeElement, {
         data: this.sd.conditionData2,
         columns: [
-          { type:'numeric', width: "110px" ,title:"応力振幅比\nR",mask:"#,##.#", decimal:'.' },
-          { type:'numeric', width: "110px" ,title:"載荷回数\nN",mask:"#,##.#", decimal:'.' }
+          { type:'numeric', width: "110px" ,title:"応力振幅比\nR"},
+          { type:'numeric', width: "110px" ,title:"載荷回数\nN" }
         ],
         minDimensions: [2, 20]
       });
