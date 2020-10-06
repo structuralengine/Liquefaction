@@ -97,7 +97,8 @@ export class WaitDialogComponent implements OnInit {
         const js: string = JSON.stringify(body);
         // const blob = new window.Blob([js], { type: 'text/plain' });
         // FileSaver.saveAs(blob, 'test.json');
-​
+        console.log(js);
+        ​
         this.http.post(
           'https://asia-northeast1-the-structural-engine.cloudfunctions.net/function-1',
           js,
@@ -118,7 +119,7 @@ export class WaitDialogComponent implements OnInit {
                   this.router.navigate(['/condition']);
                   return;
                 }
-​
+​                console.log(re);
                 // 計算結果を処理
                 const R: number = re['r']; 
                 const L: number = re['s']; 
