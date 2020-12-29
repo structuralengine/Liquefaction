@@ -100,7 +100,7 @@ export class WaitDialogComponent implements OnInit {
         console.log(js);
         ​
         this.http.post(
-          'https://asia-northeast1-the-structural-engine.cloudfunctions.net/function-1',
+          'https://asia-northeast1-team-dobopro.cloudfunctions.net/Liquefaction',
           js,
           httpOptions
         ).toPromise()
